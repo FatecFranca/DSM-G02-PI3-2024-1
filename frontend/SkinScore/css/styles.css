@@ -81,7 +81,6 @@
 }
 
 body {
-  
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -10938,8 +10937,12 @@ p {
 header.masthead {
   background-image: url("../assets/img/CounterStrikeLegueOfLegends.jpg");
 }
-.legue-of-legends, .counter-strike{
-  background-image: url("../assets/img/product/padrao-1920-1200.jpg");
+.legue-of-legends{
+  background-image: url("../assets/img/product/LegueOfLegends.jpg");
+  border: 1px solid red;
+}
+.counter-strike{
+  background-image: url("../assets/img/product/CounterStrike.jpg");
   border: 1px solid red;
 }
 .games{
@@ -10992,7 +10995,7 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
     padding-top: 35rem;
     padding-bottom: 12.5rem;
     */
-    padding: 23rem;
+    padding: 26rem;
   }
 }
 #portfolio .portfolio-item {
