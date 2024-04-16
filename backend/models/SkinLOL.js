@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const skincsgoSchema = new Schema({
+const skinlolSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -35,9 +35,9 @@ const skincsgoSchema = new Schema({
     }
 }, { timestamps: true });
 
-const SkinCSGO = mongoose.model("SkinCSGO", skincsgoSchema);
+const SkinLOL = mongoose.model("SkinLOL", skinlolSchema);
 
 module.exports = {
-    SkinCSGO,
-    skincsgoSchema,
+    SkinLOL,
+    skinlolSchema,
 };

@@ -1,0 +1,27 @@
+Usuário e Comentário:
+
+Relação: Associação
+Explicação: Os usuários e os comentários são completamente independentes entre si, mas eventualmente estão relacionados. 
+Um usuário pode fazer vários comentários, e um comentário é feito por apenas um usuário. 
+Não há propriedade nem dependência direta entre eles.
+
+Skin_CSGO e Comentário:
+
+Relação: Associação
+Explicação: As skins do CS:GO e os comentários também são independentes entre si, mas ocasionalmente estão relacionados. 
+Uma skin do CS:GO pode receber vários comentários de diferentes usuários, e um comentário é feito sobre apenas uma skin do CS:GO. 
+Não há propriedade nem dependência direta entre eles.
+
+Skin_LOL e Comentário:
+
+Relação: Associação
+Explicação: Da mesma forma, as skins do League of Legends e os comentários são independentes entre si, mas ocasionalmente estão relacionados. 
+Uma skin do League of Legends pode receber vários comentários de diferentes usuários, e um comentário é feito sobre apenas uma skin do League of Legends. 
+Não há propriedade nem dependência direta entre eles.
+
+Usuário e Skin_CSGO / Skin_LOL:
+
+Relação: Agregação
+Explicação: Um usuário pode possuir várias skins tanto do CS:GO quanto do League of Legends, e uma skin pode ser possuída por vários usuários. 
+No entanto, existe uma exclusividade em relação à posse das skins. Cada skin é propriedade de um usuário específico, mas a existência de ambas as entidades não é inteiramente dependente da relação estabelecida entre elas. 
+Portanto, a relação é mais próxima de uma agregação, onde um objeto (usuário) é proprietário de vários outros objetos (skins), mas não há uma dependência direta em que a destruição do usuário leve à destruição das skins.
