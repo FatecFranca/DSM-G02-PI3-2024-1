@@ -10945,9 +10945,7 @@ header.masthead {
   background-image: url("../assets/img/product/CounterStrike.jpg");
   border: 1px solid red;
 }
-.games{
-  padding-top: 2%;
-}
+
 header.masthead, .legue-of-legends, .counter-strike {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
@@ -10976,7 +10974,7 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 32rem;
-    padding-bottom: 12.5rem;  
+    padding-bottom: 32rem;  
   }
   header.masthead .masthead-subheading, .legue-of-legends, .counter-strike {
     font-size: 2.25rem;
@@ -10991,11 +10989,9 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
     margin-bottom: 4rem;
   }
   .legue-of-legends, .counter-strike{
-    /*
-    padding-top: 35rem;
-    padding-bottom: 12.5rem;
-    */
-    padding: 26rem;
+    background-image: center;
+    padding-top: 30rem;
+    padding-bottom: 30rem;
   }
 }
 #portfolio .portfolio-item {
