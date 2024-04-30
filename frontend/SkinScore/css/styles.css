@@ -41,7 +41,6 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -3852,30 +3851,38 @@ textarea.form-control-lg {
 
 @media (min-width: 576px) {
   .navbar-expand-sm {
+    
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
   .navbar-expand-sm .navbar-nav {
+    
     flex-direction: row;
   }
   .navbar-expand-sm .navbar-nav .dropdown-menu {
+    
     position: absolute;
   }
   .navbar-expand-sm .navbar-nav .nav-link {
+    
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
   }
   .navbar-expand-sm .navbar-nav-scroll {
+    
     overflow: visible;
   }
   .navbar-expand-sm .navbar-collapse {
+    
     display: flex !important;
     flex-basis: auto;
   }
   .navbar-expand-sm .navbar-toggler {
+    
     display: none;
   }
   .navbar-expand-sm .offcanvas {
+    
     position: static;
     z-index: auto;
     flex-grow: 1;
@@ -3891,6 +3898,7 @@ textarea.form-control-lg {
     display: none;
   }
   .navbar-expand-sm .offcanvas .offcanvas-body {
+    
     display: flex;
     flex-grow: 0;
     padding: 0;
@@ -3899,6 +3907,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 768px) {
   .navbar-expand-md {
+    
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
@@ -10835,7 +10844,7 @@ p {
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
   margin-top: 0;
-  /*margin-bottom: 1rem;*/
+  margin-bottom: 0rem;
 }
 .page-section h3.section-subheading, .page-section .section-subheading.h3 {
   font-size: 1rem;
@@ -10846,12 +10855,17 @@ p {
 }
 
 @media (min-width: 768px) {
+  .MasterSection{
+    height: 128rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
   section {
-    padding: 5rem 0;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
   }
 }
 .btn-xl {
-  padding: 1.25rem 2.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.125rem;
   font-weight: 700;
@@ -10887,6 +10901,7 @@ p {
   text-transform: uppercase;
 }
 #mainNav .navbar-brand img {
+  
   height: 1.5rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -10908,6 +10923,7 @@ p {
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
+    
     font-size: 1.5em;
     transition: font-size 0.3s ease-in-out;
   }
@@ -10936,14 +10952,16 @@ p {
 }
 header.masthead {
   background-image: url("../assets/img/CounterStrikeLegueOfLegends.jpg");
+  max-width: 100%;
+  height: auto;
 }
 .legue-of-legends{
   background-image: url("../assets/img/product/LegueOfLegends.jpg");
-  border: 1px solid red;
+  max-width: 100%;
+  height: auto;
 }
 .counter-strike{
   background-image: url("../assets/img/product/CounterStrike.jpg");
-  border: 1px solid red;
 }
 
 header.masthead, .legue-of-legends, .counter-strike {
@@ -11262,70 +11280,17 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 .img-brand {
   height: 2.75rem;
 }
-
-section#contact {
-  background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-section#contact .section-heading {
-  color: #fff;
-}
-section#contact form#contactForm .form-group {
-  margin-bottom: 1.5rem;
-}
-section#contact form#contactForm .form-group input,
-section#contact form#contactForm .form-group textarea {
-  padding: 1.25rem;
-}
-section#contact form#contactForm .form-group input.form-control {
-  height: auto;
-}
-section#contact form#contactForm .form-group-textarea {
-  height: 100%;
-}
-section#contact form#contactForm .form-group-textarea textarea {
-  height: 100%;
-  min-height: 10rem;
-}
-section#contact form#contactForm p.help-block {
-  margin: 0;
-}
-section#contact form#contactForm .form-control:focus {
-  border-color: #ffc800;
-  box-shadow: none;
-}
-section#contact form#contactForm ::-webkit-input-placeholder {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  color: #ced4da;
-}
-section#contact form#contactForm :-moz-placeholder {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  color: #ced4da;
-}
-section#contact form#contactForm ::-moz-placeholder {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  color: #ced4da;
-}
-section#contact form#contactForm :-ms-input-placeholder {
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  color: #ced4da;
-}
-
 .footer {
-  border: 1px solid black;
+  border-top: 1px;
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+/*
 .container{
   border: 1px solid black;
 }
+*/
 .portfolio-item{
   border: 1px solid black;
 }
