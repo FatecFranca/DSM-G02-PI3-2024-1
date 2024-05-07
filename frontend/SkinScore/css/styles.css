@@ -87,6 +87,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
+  background-color: #212529 !important;
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -660,6 +661,7 @@ progress {
   }
 }
 .row {
+  
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -3851,7 +3853,6 @@ textarea.form-control-lg {
 
 @media (min-width: 576px) {
   .navbar-expand-sm {
-    
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
@@ -6747,10 +6748,10 @@ textarea.form-control-lg {
 }
 
 .link-dark {
-  color: #212529 !important;
+  color: white !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: #1a1e21 !important;
+  color: #ffc800 !important;
 }
 
 .ratio {
@@ -10841,7 +10842,9 @@ p {
   line-height: 1.75;
 }
 
+
 .page-section h2.section-heading, .page-section .section-heading.h2 {
+  color: white;
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 0rem;
@@ -10856,6 +10859,7 @@ p {
 
 @media (min-width: 768px) {
   .MasterSection{
+    background-color: #212529 !important;
     height: 128rem;
     padding-top: 4rem;
     padding-bottom: 1rem;
@@ -11281,6 +11285,8 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
   height: 2.75rem;
 }
 .footer {
+  background-color: #212529 !important;
+  color: white;
   border-top: 1px;
   text-align: center;
   font-size: 0.9rem;
