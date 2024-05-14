@@ -661,7 +661,8 @@ progress {
   }
 }
 .row {
-  
+  /*Changes here*/
+  border: 5px solid black;
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
