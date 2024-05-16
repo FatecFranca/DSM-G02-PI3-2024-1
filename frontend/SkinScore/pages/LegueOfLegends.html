@@ -689,15 +689,28 @@
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/1.jpg" alt="..." />
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
                                 <!-- Chat Section -->
                                 <h3 class="text-uppercase mt-4">Comentários</h3>
                                 <div id="chat-container">
                                     <!-- Existing comments will be appended here -->
                                 </div>
-                                <div class="mt-3 text-center">
-                                    <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="rounded-circle border" style="width: 100px; height: 100px; margin-bottom: 10px;" />
-                                    <input type="text" id="user-comment" class="form-control d-inline-block w-75" placeholder="Digite seu comentário aqui..." />
-                                    <button class="btn btn-primary d-inline-block" onclick="addComment()">Enviar</button>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
+                                    </button>
                                 </div>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
@@ -716,27 +729,38 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/2.jpg" alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
+                                <!-- Chat Section -->
+                                <h3 class="text-uppercase mt-4">Comentários</h3>
+                                <div id="chat-container">
+                                    <!-- Existing comments will be appended here -->
+                                </div>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
                                     </button>
                                 </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -750,27 +774,38 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/3.jpg" alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
+                                <!-- Chat Section -->
+                                <h3 class="text-uppercase mt-4">Comentários</h3>
+                                <div id="chat-container">
+                                    <!-- Existing comments will be appended here -->
+                                </div>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
                                     </button>
                                 </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -784,27 +819,38 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/4.jpg" alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
+                                <!-- Chat Section -->
+                                <h3 class="text-uppercase mt-4">Comentários</h3>
+                                <div id="chat-container">
+                                    <!-- Existing comments will be appended here -->
+                                </div>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
                                     </button>
                                 </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -818,27 +864,38 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/5.jpg" alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
+                                <!-- Chat Section -->
+                                <h3 class="text-uppercase mt-4">Comentários</h3>
+                                <div id="chat-container">
+                                    <!-- Existing comments will be appended here -->
+                                </div>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
                                     </button>
                                 </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -852,27 +909,38 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/6.jpg" alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <div class="container mt-5">
+                                    <div class="rating">
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                        <span class="star">&#x2606;</span>
+                                    </div>
+                                </div>
+                                <!-- Chat Section -->
+                                <h3 class="text-uppercase mt-4">Comentários</h3>
+                                <div id="chat-container">
+                                    <!-- Existing comments will be appended here -->
+                                </div>
+                                <div class="Userdiv">
+                                    <div>
+                                        <img src="../assets/img/Userdefault.png" alt="User Icon" id="user-icon" class="UserIcon"/>
+                                    </div>
+                                    <textarea type="text" name="" class="textcomment" id="user-comment" placeholder="Digite seu comentário aqui...""></textarea>
+                                    <button class="btn btn-primary btn-xl text-uppercase Send" onclick="addComment()">
+                                        Enviar
                                     </button>
                                 </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
                             </div>
                         </div>
                     </div>

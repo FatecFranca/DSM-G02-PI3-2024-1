@@ -11301,11 +11301,62 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 .portfolio-item{
   border: 1px solid black;
 }
+.UserIcon{
+  margin-bottom: 5rem;
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5rem;
+  border: 0;
+  border: 1px solid #ffc800;
+  border-radius: 50%;
+}
+.Userdiv{
+  display: inline-flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.textcomment{
+  border-radius: 0.5rem;
+  width: 40rem;
+  height: 150px;
+  border: 2px solid #ffc800;
+  padding: 0.5rem;
 
+}
+.textcomment:focus {
+  outline: none; /* Remove a borda preta ao clicar */
+  border: 2px solid #cca000;
+}
+.Send{
+  height: 3rem;
+}
 .comment-div {
   border-radius: 5px;
 }
 
 .comment-text {
   margin-left: 10px;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  font-size: 5em;
+  color: #ffc800; 
+  cursor: pointer; 
+}
+.rating > span.active:before,
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: #ffc800; /* Cor do "brilho" das estrelas */
+}
+.rating > span:before {
+  content: "\2606";
+  position: absolute;
 }

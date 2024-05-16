@@ -40,22 +40,29 @@ function addComment() {
         alert('Por favor, digite um comentário.');
         return;
     }
-
     // Create a new div for the comment
     const commentDiv = document.createElement('div');
-    commentDiv.classList.add('comment-div', 'mt-3', 'border', 'border-warning', 'p-3');
+    commentDiv.classList.add('Userdiv', 'mt-3', 'border-warning', 'p-3');
 
     // Create the user icon element
     const userIcon = document.getElementById('user-icon').cloneNode(true);
-    userIcon.style.width = '30px';
-    userIcon.style.height = '30px';
-    userIcon.classList.remove('border');
     userIcon.classList.add('me-3');
+
+    // Apply styles for user icon
+    userIcon.style.marginBottom = '5rem';
+    userIcon.style.marginRight = '0.5rem';
+    userIcon.style.width = '50px';
+    userIcon.style.height = '50px';
 
     // Create the comment text element
     const commentTextDiv = document.createElement('div');
     commentTextDiv.textContent = commentText;
-    commentTextDiv.classList.add('comment-text');
+    commentTextDiv.classList.add('textcomment');
+    commentTextDiv.style.border = "2px solid #ffc800";
+    commentTextDiv.style.overflowY = "auto";
+    commentTextDiv.style.overflowWrap = "break-word";
+    commentTextDiv.style.textAlign = "left"
+     // Border color as yellow
 
     // Append the user icon and comment text to the comment div
     commentDiv.appendChild(userIcon);
@@ -68,3 +75,21 @@ function addComment() {
     // Clear the input field
     document.getElementById('user-comment').value = '';
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(function(star, index) {
+        star.addEventListener("click", function() {
+            removeActiveStars();
+            for (let i = stars.length - 1; i >= index; i--) {
+                stars[i].classList.add("active");
+            }
+        });
+    });
+
+    function removeActiveStars() {
+        stars.forEach(function(star) {
+            star.classList.remove("active");
+        });
+    }
+});
