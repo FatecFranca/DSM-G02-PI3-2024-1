@@ -11301,3 +11301,11 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 .portfolio-item{
   border: 1px solid black;
 }
+
+.comment-div {
+  border-radius: 5px;
+}
+
+.comment-text {
+  margin-left: 10px;
+}
