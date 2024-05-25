@@ -36,48 +36,31 @@ window.addEventListener('DOMContentLoaded', event => {
 function addComment() {
     // Get the comment text from the input field
     const commentText = document.getElementById('user-comment').value;
+    const commentDiv = document.createElement('div');
+    const userIcon = document.getElementById('user-icon').cloneNode(true);
+    const commentTextDiv = document.createElement('div');
+    const chatContainer = document.getElementById('chat-container');
     if (commentText.trim() === '') {
         alert('Por favor, digite um comentário.');
         return;
     }
-    // Create a new div for the comment
-    const commentDiv = document.createElement('div');
     commentDiv.classList.add('Userdiv', 'mt-3', 'border-warning', 'p-3');
-
-    // Create the user icon element
-    const userIcon = document.getElementById('user-icon').cloneNode(true);
     userIcon.classList.add('me-3');
+    userIcon.style = 'UserIcon';
 
-    // Apply styles for user icon
-    userIcon.style.marginBottom = '5rem';
-    userIcon.style.marginRight = '0.5rem';
-    userIcon.style.width = '50px';
-    userIcon.style.height = '50px';
-
-    // Create the comment text element
-    const commentTextDiv = document.createElement('div');
     commentTextDiv.textContent = commentText;
     commentTextDiv.classList.add('textcomment');
-    commentTextDiv.style.border = "2px solid #ffc800";
-    commentTextDiv.style.overflowY = "auto";
-    commentTextDiv.style.overflowWrap = "break-word";
-    commentTextDiv.style.textAlign = "left"
-     // Border color as yellow
+    commentTextDiv.style =  'TextDiv';
 
-    // Append the user icon and comment text to the comment div
     commentDiv.appendChild(userIcon);
     commentDiv.appendChild(commentTextDiv);
 
-    // Append the comment div to the chat container
-    const chatContainer = document.getElementById('chat-container');
     chatContainer.appendChild(commentDiv);
-
-    // Clear the input field
     document.getElementById('user-comment').value = '';
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     const stars = document.querySelectorAll(".star");
-
     stars.forEach(function(star, index) {
         star.addEventListener("click", function() {
             removeActiveStars();
@@ -86,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
     function removeActiveStars() {
         stars.forEach(function(star) {
             star.classList.remove("active");
