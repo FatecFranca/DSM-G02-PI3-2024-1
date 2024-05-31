@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node src/bin/server.js",
+    "dev": "nodemon src/bin/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.1",
     "mongoose": "^8.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

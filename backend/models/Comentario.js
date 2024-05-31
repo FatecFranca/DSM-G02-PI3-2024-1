@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const comentarioSchema = new Schema({
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario',
         required: true
     },
     skin: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Skin',
         required: true
     },
@@ -21,8 +20,8 @@ const comentarioSchema = new Schema({
         type: Date,
         default: Date.now
     }
-});
+}, { timestamps: true });
 
-const Comentario = mongoose.model("Comentario", comentarioSchema);
+const Comentario = mongoose.model('Comentario', comentarioSchema);
 
 module.exports = Comentario;

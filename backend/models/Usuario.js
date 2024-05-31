@@ -1,16 +1,16 @@
-const mongoose = require("mongoose")
-
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const usuarioSchema = new Schema(
+const usuarioSchema = new Schema({
     username: {
         type: String,
         required: true,
-        unique: true 
+        unique: true
+    },
     email: {
         type: String,
         required: true,
-        unique: true 
+        unique: true
     },
     password: {
         type: String,
@@ -21,25 +21,14 @@ const usuarioSchema = new Schema(
         default: Date.now
     },
     profile_picture: {
-        type: String,
-        default: 'default.jpg' // imagem de perfil padrão
+        type: String, 
     },
     skin_collection: [{
-        skin_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true
-        },
-        jogo: {
-            type: String,
-            enum: ['CSGO', 'LOL'], 
-            required: true
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Skin'
     }]
-},{timestamp: true});
+}, { timestamps: true });
 
-const Usuario = mongoose.model("Usuario", usuarioSchema)
+const Usuario = mongoose.model('Usuario', usuarioSchema);
 
-module.exports = {
-    Usuario,
-    usuarioSchema,
-};
+module.exports = Usuario;
