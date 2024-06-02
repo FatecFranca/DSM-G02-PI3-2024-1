@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         star.addEventListener("click", () => {
-            starNumber = index + 1
+            starNumber = 5 - index
         });
     });
 });
