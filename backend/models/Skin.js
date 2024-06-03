@@ -32,6 +32,14 @@ const skinSchema = new Schema({
         max: 5,
         default: 0
     },
+    totalRating: {
+        type: Number,
+        default: 0
+    },
+    ratingCount: {
+        type: Number,
+        default: 0
+    },
     game: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Game',

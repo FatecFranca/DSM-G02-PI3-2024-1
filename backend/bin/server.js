@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar ao MongoDB
-const conn = require('../../config/db');
+const conn = require('../config/db');
 conn();
 
 // Rotas
