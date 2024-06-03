@@ -659,7 +659,7 @@ progress {
 .row {
   /*Changes here*/
   --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
+  --bs-gutter-y: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
@@ -11294,9 +11294,6 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-.portfolio-item{
-  
-}
 .UserIcon{
   margin-bottom: 5rem;
   width: 50px;
@@ -11306,11 +11303,13 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
   border: 1px solid #ffc800;
   border-radius: 50%;
 }
-
 .Userdiv{
   display: inline-flex;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.commentDiv{
+  width: 50rem;
 }
 .TextDiv{
   border: 2px solid #ffc800;
@@ -11320,11 +11319,13 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 }
 .textcomment{
   border-radius: 0.5rem;
-  width: 40rem;
+  width: 35rem;
   height: 150px;
   border: 2px solid #ffc800;
   padding: 0.5rem;
-
+  overflow: auto;
+  overflow-wrap: break-word;
+  text-align: left;
 }
 .textcomment:focus {
   outline: none; 
@@ -11340,10 +11341,9 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
   margin-left: 10px;
 }
 .sectionDIV{
-  border: 1px solid black;
   display: flex;
-  padding: 0;
   flex-direction: column;
+
 }
 .rating {
   unicode-bidi: bidi-override;
@@ -11387,6 +11387,7 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
 }
 
 .starComment{
-  border: 1px solid black;
-  display: flex;
+  
+  color: #ffc800;
+  display: absolute;
 }

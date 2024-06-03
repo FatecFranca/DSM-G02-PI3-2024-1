@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
+
 function addComment() {
     const commentText = document.getElementById('user-comment').value.trim();
     if (!commentText) {
@@ -44,7 +45,7 @@ function addComment() {
     sectionDiv.className = 'sectionDIV';
 
     const commentDiv = document.createElement('div');
-    commentDiv.className = 'Userdiv mt-3 border-warning p-3';
+    commentDiv.className = 'Userdiv mt-3 border-warning p-3 commentDiv';
 
     const userIcon = document.getElementById('user-icon').cloneNode(true);
     userIcon.className = 'me-3 UserIcon';
@@ -54,15 +55,18 @@ function addComment() {
     commentTextDiv.className = 'textcomment';
 
     const starSpan = document.createElement('span');
-    starSpan.innerHTML = '&#x2606;';
-    starSpan.innerHTML = `${starNumber}`;
     starSpan.className = 'star starComment';
-
+    for (let i = 0; i < starNumber; i++) {
+        const starElement = document.createElement('span');
+        starElement.innerHTML = '&#x2605;';
+        starSpan.appendChild(starElement);
+    }
     sectionDiv.append(starSpan, commentDiv); 
     commentDiv.append(userIcon, commentTextDiv);
     document.getElementById('chat-container').appendChild(sectionDiv); 
     document.getElementById('user-comment').value = '';
 }
+
 
 
 let starNumber = 0
