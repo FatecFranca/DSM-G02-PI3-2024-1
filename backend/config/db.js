@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb+srv://admin_banco:myFnbkK1plZSrTZz@cluster1.tnnr191.mongodb.net/', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect('mongodb+srv://admin_banco:myFnbkK1plZSrTZz@cluster1.tnnr191.mongodb.net/');
         console.log('Conectado ao Banco de Dados');
     } catch (error) {
         console.error(`Erro ao conectar ao banco de dados: ${error}`);
@@ -14,3 +11,4 @@ async function connect() {
 }
 
 module.exports = connect;
+
