@@ -34,44 +34,49 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 function addComment() {
-    // Get the comment text from the input field
-    const commentText = document.getElementById('user-comment').value;
-    const commentDiv = document.createElement('div');
-    const userIcon = document.getElementById('user-icon').cloneNode(true);
-    const commentTextDiv = document.createElement('div');
-    const chatContainer = document.getElementById('chat-container');
-    if (commentText.trim() === '') {
+    const commentText = document.getElementById('user-comment').value.trim();
+    if (!commentText) {
         alert('Por favor, digite um comentário.');
         return;
     }
-    commentDiv.classList.add('Userdiv', 'mt-3', 'border-warning', 'p-3');
-    userIcon.classList.add('me-3');
-    userIcon.style = 'UserIcon';
 
+    const sectionDiv = document.createElement('div');
+    sectionDiv.className = 'sectionDIV';
+
+    const commentDiv = document.createElement('div');
+    commentDiv.className = 'Userdiv mt-3 border-warning p-3';
+
+    const userIcon = document.getElementById('user-icon').cloneNode(true);
+    userIcon.className = 'me-3 UserIcon';
+
+    const commentTextDiv = document.createElement('div');
     commentTextDiv.textContent = commentText;
-    commentTextDiv.classList.add('textcomment');
-    commentTextDiv.style =  'TextDiv';
+    commentTextDiv.className = 'textcomment';
 
-    commentDiv.appendChild(userIcon);
-    commentDiv.appendChild(commentTextDiv);
+    const starSpan = document.createElement('span');
+    starSpan.innerHTML = '&#x2606;';
+    starSpan.innerHTML = `${starNumber}`;
+    starSpan.className = 'star starComment';
 
-    chatContainer.appendChild(commentDiv);
+    sectionDiv.append(starSpan, commentDiv); 
+    commentDiv.append(userIcon, commentTextDiv);
+    document.getElementById('chat-container').appendChild(sectionDiv); 
     document.getElementById('user-comment').value = '';
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+
+let starNumber = 0
+document.addEventListener("DOMContentLoaded", () => {
     const stars = document.querySelectorAll(".star");
-    stars.forEach(function(star, index) {
-        star.addEventListener("click", function() {
-            removeActiveStars();
-            for (let i = stars.length - 1; i >= index; i--) {
-                stars[i].classList.add("active");
-            }
+
+    stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+            stars.forEach((s, i) => {
+                s.classList.toggle("active", i >= index);
+            });
+        });
+        star.addEventListener("click", () => {
+            starNumber = 5 - index
         });
     });
-    function removeActiveStars() {
-        stars.forEach(function(star) {
-            star.classList.remove("active");
-        });
-    }
 });
