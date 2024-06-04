@@ -74,7 +74,7 @@ const usuarioController = {
     async addSkinToUser(req, res) {
         const { userId } = req.params;
         const { skinId } = req.body;
-    
+         
         try {
             // Verificar se o usuário existe
             const usuario = await Usuario.findById(userId);

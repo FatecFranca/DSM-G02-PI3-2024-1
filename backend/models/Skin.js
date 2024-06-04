@@ -15,7 +15,7 @@ const skinSchema = new Schema({
         required: true
     },
     image: {
-        type: String, // Assuming URL is stored as a string
+        type: String, 
         required: true
     },
     price: {
