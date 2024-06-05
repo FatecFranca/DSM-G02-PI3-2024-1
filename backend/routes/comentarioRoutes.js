@@ -8,6 +8,9 @@ router.post('/', comentarioController.create);
 // Rota para obter todos os comentários
 router.get('/', comentarioController.getAll);
 
+// Rota para obter um comentário específico por ID
+router.get('/:id', comentarioController.getComentarioById);
+
 // Rota para atualizar um comentário por ID
 router.put('/:id', comentarioController.updateCommentById);
 
