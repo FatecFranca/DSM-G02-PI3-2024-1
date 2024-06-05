@@ -13,7 +13,7 @@ router.delete('/:userId/remove-skin/:skinId', usuarioController.removeSkinFromUs
 router.put('/:id', usuarioController.updateUserById); // Rota para alterar dados de um usuário por ID
 router.patch('/:id', usuarioController.addDataToUserById); // Rota para inserir dados em um usuário por ID
 router.post('/:userId/add-skin', usuarioController.addSkinToUser); // Rota para adicionar uma skin ao skin_collection de um usuário por ID
-
+router.get('/:id/skins', usuarioController.getUserSkins); // Para buscar a coleção de skins de um usuário específico
 
 
 module.exports = router;

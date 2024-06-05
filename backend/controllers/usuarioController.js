@@ -136,7 +136,19 @@ const usuarioController = {
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
-    },     
+    },
+    async getUserSkins(req, res) {
+        try {
+            const { id } = req.params;
+            const usuario = await Usuario.findById(id).populate('skin_collection');
+            if (!usuario) {
+                return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+            }
+            res.status(200).json({ success: true, skins: usuario.skin_collection });
+        } catch (error) {
+            res.status(500).json({ success: false, error: error.message });
+        }
+    }
 }
 
 module.exports = usuarioController;
