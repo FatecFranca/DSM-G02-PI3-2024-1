@@ -67,8 +67,6 @@ function addComment() {
     document.getElementById('user-comment').value = '';
 }
 
-
-
 let starNumber = 0
 document.addEventListener("DOMContentLoaded", () => {
     const stars = document.querySelectorAll(".star");

@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "37ff0084-6647-45ec-86bc-13e25cc1e58e",
+		"name": "PI 3º DSM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10153436"
+	},
+	"item": [
+		{
+			"name": "Criação de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Bruno Algarte\",\r\n  \"email\": \"brunoalgter@gmail.com\",\r\n  \"password\": \"Teste123\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter todos os usuários",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Guilherme Luis\",\r\n  \"email\": \"guilherme.luis@gmail.com\",\r\n  \"password\": \"Lol123\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter um usuário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um usuário por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar um usuário por ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"guilherme.luis@hotmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar dados a um usuário por ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar uma skin ao usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"skinId\": \"665cd599a13b26664fb7f2b8\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}/add-skin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"add-skin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover uma skin do usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}/remove-skin/{id_skin}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"remove-skin",
+						"{id_skin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET para skin_colection de um usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/{id_usuario}/skins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"skins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar uma Skin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Nome da Skin\",\r\n  \"description\": \"Descrição da Skin\",\r\n  \"type\": \"Tipo da Skin\",\r\n  \"image\": \"URL da Imagem\",\r\n  \"price\": 100,\r\n  \"rarity\": \"Raridade da Skin\",\r\n  \"game\": \"665cb13d3b835e3f8cdddd33\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/skins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as Skins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/skins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter uma Skin por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/skins/{id_skin}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar uma Skin por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/skins/{id_skin}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar uma Skin por ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Novo Nome da Skin\",\r\n  \"description\": \"Nova Descrição da Skin\",\r\n  \"type\": \"Novo Tipo da Skin\",\r\n  \"image\": \"Nova URL da Imagem\",\r\n  \"price\": 150,\r\n  \"rarity\": \"Nova Raridade da Skin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/skins/{id_skin}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Informações em uma Skin por ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Teste\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/skins/{id_skin}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Avaliar uma Skin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"665cae71116006c0c743894c\",\r\n  \"rating\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/skins/{id_skin}/rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"skins",
+						"{id_skin}",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um jogo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"teste do Jogo\",\r\n  \"type\": \"teste do Jogo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter todos os jogos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar um Jogo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Novo Nome\",\r\n    \"type\": \"Novo Tipo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/games/{id_jogo}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games",
+						"{id_jogo}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um jogo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/games/{id_jogo}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games",
+						"{id_jogo}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar  um comentário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"665f97645e324beb4b504457\",\r\n    \"skin\": \"665cb71f42641de29915741e\",\r\n    \"comment\": \"Ótima skin, estou adorando!\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter todos os comentários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Comentário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Novo conteúdo do comentário\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comentarios/{id_comentário}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um comentário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comentarios/{id_comentário}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar comentário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comentarios/{id_comentário}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
