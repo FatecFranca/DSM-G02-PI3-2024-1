@@ -10856,9 +10856,9 @@ p {
 @media (min-width: 768px) {
   .MasterSection{
     background-color: #212529 !important;
-    height: 102rem;
+    height: auto;
     padding-top: 4rem;
-    padding-bottom: 1rem;
+    
   }
   section {
     padding-top: 4rem;
@@ -11004,19 +11004,14 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 3rem;
-    margin-bottom: 4rem;
+    margin-top: auto;
+    margin-bottom: 2;
   }
   .legue-of-legends, .counter-strike{
     filter: brightness(90%);
     background-image: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  .counter-strike{
-    filter: brightness(90%);
-    background-image: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 #portfolio .portfolio-item {

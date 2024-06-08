@@ -169,37 +169,3 @@ function Register() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const character1 = document.getElementById('image-container-1');
-    const character1_ID = '665cb71f42641de29915741e';
-    
-    fetch(`http://localhost:8080/skins/${character1_ID}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Falha ao conectar no banco.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success) {
-            const skin = data.skin;
-            const imageUrl = skin.image;
-            character1.src = imageUrl;
-            character1.alt = skin.name;
-        } else {
-            throw new Error('Skin não encontrada.');
-        }
-    })
-    .catch(error => {
-        console.error('Erro ao tentar puxar a imagem:', error.message);
-        character1.alt = 'Erro ao carregar a imagem.';
-    });
-});
-
-
-
