@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
+const loginRoutes = require('../routes/loginRoutes');
 const usuarioRoutes = require('../routes/usuarioRoutes');
 const skinRoutes = require('../routes/skinRoutes');
 const comentarioRoutes = require('../routes/comentarioRoutes');
@@ -20,6 +21,7 @@ app.use('/usuarios', usuarioRoutes);
 app.use('/skins', skinRoutes);
 app.use('/comentarios', comentarioRoutes);
 app.use('/games', gameRoutes);
+app.use('/login', loginRoutes);
 
 // Iniciar o servidor
 const PORT = process.env.PORT || 8080;
