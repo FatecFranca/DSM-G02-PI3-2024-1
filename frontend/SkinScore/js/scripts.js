@@ -33,8 +33,8 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 
-function addComment() {
-    const commentText = document.getElementById('user-comment').value.trim();
+function addComment(skinId) {
+    const commentText = document.getElementById(`user-comment-${skinId}`).value.trim();
     if (!commentText) {
         alert('Por favor, digite um comentário.');
         return;
@@ -46,7 +46,7 @@ function addComment() {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'Userdiv mt-3 border-warning p-3 commentDiv';
 
-    const userIcon = document.getElementById('user-icon').cloneNode(true);
+    const userIcon = document.getElementById(`user-icon-${skinId}`).cloneNode(true);
     userIcon.className = 'me-3 UserIcon';
 
     const commentTextDiv = document.createElement('div');
@@ -62,22 +62,23 @@ function addComment() {
     }
     sectionDiv.append(starSpan, commentDiv);
     commentDiv.append(userIcon, commentTextDiv);
-    document.getElementById('chat-container').appendChild(sectionDiv);
-    document.getElementById('user-comment').value = '';
+    document.getElementById(`chat-container-${skinId}`).appendChild(sectionDiv);
+    document.getElementById(`user-comment-${skinId}`).value = '';
 }
 
 let starNumber = 0;
 document.addEventListener("DOMContentLoaded", () => {
-    const stars = document.querySelectorAll(".star");
+    const ratings = document.querySelectorAll(".rating");
 
-    stars.forEach((star, index) => {
-        star.addEventListener("click", () => {
-            stars.forEach((s, i) => {
-                s.classList.toggle("active", i >= index);
+    ratings.forEach((rating) => {
+        const stars = rating.querySelectorAll(".star");
+        stars.forEach((star, index) => {
+            star.addEventListener("click", () => {
+                stars.forEach((s, i) => {
+                    s.classList.toggle("active", i >= index);
+                });
+                starNumber = 5 - index;
             });
-        });
-        star.addEventListener("click", () => {
-            starNumber = 5 - index;
         });
     });
 });
@@ -116,7 +117,7 @@ function fazerLogin() {
     })
     .catch(error => {
         console.error('Erro ao fazer login:', error.message);
-        alert('Usuário ou senha incorretos');
+        //alert('Usuário ou senha incorretos');
     });
 }
 
