@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.getElementById('loginForm').addEventListener('click', function (event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
     fazerLogin();
 });
@@ -109,6 +109,7 @@ function fazerLogin() {
         // Aqui vc compara o usuario do html com o json retornado da requisicao
         const user = data.find(user => user.username === username && user.password === password);
         if (user) {
+            //alert('Até aqui tudo certo');
             console.log('Login bem-sucedido:', user);
             window.location.href = '/frontend/SkinScore/pages/login/main.html';
         }
@@ -119,7 +120,7 @@ function fazerLogin() {
     });
 }
 
-document.getElementById('logout').addEventListener('click', function (event) {
+document.getElementById('logout').addEventListener('submit', function (event) {
     event.preventDefault();
     fazerLogout();
 });
@@ -129,7 +130,9 @@ function fazerLogout() {
     window.location.href = '/frontend/SkinScore/pages/login/login.html';
 }
 
-document.getElementById('registerform').addEventListener('submit', function(event) {
+
+/*
+    document.getElementById('registerform').addEventListener('submit', function(event) {
     event.preventDefault();
     Register();
 });
@@ -168,4 +171,5 @@ function Register() {
         alert('Erro ao fazer o cadastro: ' + error.message);
     });
 }
+*/
 
