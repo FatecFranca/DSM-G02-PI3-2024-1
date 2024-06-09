@@ -93,20 +93,10 @@ const usuarioController = {
                 return res.status(400).json({ message: 'A skin já está presente no skin_collection do usuário' });
             }
     
-            // Log do estado atual do skin_collection
-            console.log('Antes de adicionar:', usuario.skin_collection);
-    
             // Adicionar a skin ao skin_collection do usuário
             usuario.skin_collection.push(skinId);
     
-            // Log do estado após adicionar a skin
-            console.log('Depois de adicionar (push):', usuario.skin_collection);
-    
             await usuario.save();
-    
-            // Verificação após salvar
-            const usuarioAtualizado = await Usuario.findById(userId);
-            console.log('Depois de salvar:', usuarioAtualizado.skin_collection);
     
             res.status(200).json({ message: 'Skin adicionada ao skin_collection do usuário com sucesso', usuario });
         } catch (error) {
