@@ -131,14 +131,39 @@ function fazerLogout() {
     window.location.href = '/frontend/SkinScore/pages/login/login.html';
 }
 
+function skinCollection(skin1, skin2, skin3, skinId) {
+    //665cd5b4a13b26664fb7f2c4           6665e3c4e86edf9f31889e41         6665e3ffe86edf9f31889e43
+    const skiname = document.getElementById(`name-${skinId}`);
+    const describeskin = document.getElementById(`description-${skinId}`);
+    const skinprice = document.getElementById(`price-value-${skinId}`);
 
-/*
-    document.getElementById('registerform').addEventListener('submit', function(event) {
-    event.preventDefault();
-    Register();
-});
+    // Montando a URL com os parâmetros de consulta
+    const url = `http://localhost:8080/skins?skin1=${skin1}&skin2=${skin2}&skin3=${skin3}`;
 
-function Register() {
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Falha ao conectar no banco....');
+        }
+        return response.json();
+    })
+    .then(data => {
+        
+    })
+    .catch(error => {
+        console.error('Erro ao puxar a skin', error.message);
+    });
+}
+
+
+function Register(event) {
+    event.preventDefault(); // Prevent form from submitting the default way
+
     const username = document.getElementById('newusername').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('newpassword').value;
@@ -158,13 +183,12 @@ function Register() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Falha ao conectar no banco, tente novamente.');
+            return response.json().then(err => { throw new Error(err.error); });
         }
         return response.json();
     })
     .then(data => {
         alert('Cadastro realizado com sucesso!');
-        //insira as variaveis de cadastro
         window.location.href = '/frontend/SkinScore/pages/login/login.html';
     })
     .catch(error => {
@@ -172,5 +196,4 @@ function Register() {
         alert('Erro ao fazer o cadastro: ' + error.message);
     });
 }
-*/
 

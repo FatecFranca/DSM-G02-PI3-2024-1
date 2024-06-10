@@ -49,7 +49,7 @@
                     <div class="masthead-heading text-uppercase">SkinScore</div>
                 </div>
                 <div class="register-section mt-5">
-                    <form id="registerform" class="form-inline d-flex flex-column align-items-center">
+                    <form id="registerform" class="form-inline d-flex flex-column align-items-center" onsubmit="Register(event)">
                         <div class="form-group mb-2">
                             <label for="newusername" class="sr-only">Usuário</label>
                             <input type="text" class="form-control" id="newusername" placeholder="Usuário" required>
@@ -68,9 +68,9 @@
                         </div>
                         <div>
                             <a class="btn btn-primary btn-xl text-uppercase" href="login.html">Voltar</a>
-                            <button type="button" class="btn btn-primary btn-xl text-uppercase" onclick="Register()">Confirmar</button>
+                            <button type="submit" class="btn btn-primary btn-xl text-uppercase">Confirmar</button>
                         </div>
-                    </form>
+                    </form>                    
                 </div>
             </div>
         </header>
