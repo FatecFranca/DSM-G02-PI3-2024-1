@@ -64,7 +64,7 @@ function addComment(skinId) {
     // Botão de editar
     const editButton = document.createElement('button');
     editButton.textContent = 'Editar';
-    editButton.className = 'btn btn-secondary btn-sm ms-2';
+    editButton.className = 'btn btn-primary btn-sm ms-2 ';
     editButton.style.height = '30px'; // Defina a altura desejada aqui
     editButton.onclick = function() {
         editComment(commentDiv, commentTextDiv, skinId);
