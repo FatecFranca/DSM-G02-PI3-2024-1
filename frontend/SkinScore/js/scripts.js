@@ -60,10 +60,39 @@ function addComment(skinId) {
         starElement.innerHTML = '&#x2605;';
         starSpan.appendChild(starElement);
     }
+
+    // Botão de editar
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Editar';
+    editButton.className = 'btn btn-secondary btn-sm ms-2';
+    editButton.style.height = '30px'; // Defina a altura desejada aqui
+    editButton.onclick = function() {
+        editComment(commentDiv, commentTextDiv, skinId);
+    };
+
+    // Botão de apagar
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Apagar';
+    deleteButton.className = 'btn btn-danger btn-sm ms-2';
+    deleteButton.style.height = '30px'; // Defina a altura desejada aqui
+    deleteButton.onclick = function() {
+        deleteComment(sectionDiv);
+    };
+
+    commentDiv.append(userIcon, commentTextDiv, editButton, deleteButton);
     sectionDiv.append(starSpan, commentDiv);
-    commentDiv.append(userIcon, commentTextDiv);
     document.getElementById(`chat-container-${skinId}`).appendChild(sectionDiv);
     document.getElementById(`user-comment-${skinId}`).value = '';
+}
+
+function editComment(commentDiv, commentTextDiv, skinId) {
+    const commentText = commentTextDiv.textContent;
+    document.getElementById(`user-comment-${skinId}`).value = commentText;
+    commentDiv.parentNode.remove();
+}
+
+function deleteComment(sectionDiv) {
+    sectionDiv.remove();
 }
 
 let starNumber = 0;
