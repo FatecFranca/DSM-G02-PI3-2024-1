@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config(); // Carregar variáveis de ambiente
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb+srv://admin_banco:myFnbkK1plZSrTZz@cluster1.tnnr191.mongodb.net/');
+        // Conectar ao banco de dados usando a URL da variável de ambiente
+        await mongoose.connect(process.env.DATABASE_URL);
         console.log('Conectado ao Banco de Dados');
     } catch (error) {
         console.error(`Erro ao conectar ao banco de dados: ${error}`);
