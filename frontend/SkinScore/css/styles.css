@@ -10951,12 +10951,12 @@ p {
   }
 }
 header.masthead {
-  background-image: url("../assets/img/layout/CounterStrikeLegueOfLegends.jpg");
+  background-image: url("../assets/img/layout/CounterStrikeLeagueOfLegends.jpg");
   max-width: 100%;
   height: auto;
 }
-.legue-of-legends{
-  background-image: url("../assets/img/layout/LegueOfLegends.jpg");
+.league-of-legends{
+  background-image: url("../assets/img/layout/LeagueOfLegends.jpg");
   max-width: 100%;
   height: auto;
 }
@@ -10964,7 +10964,7 @@ header.masthead {
   background-image: url("../assets/img/layout/CounterStrike.jpg");
 }
 
-header.masthead, .legue-of-legends, .counter-strike {
+header.masthead, .league-of-legends, .counter-strike {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
@@ -10974,14 +10974,14 @@ header.masthead, .legue-of-legends, .counter-strike {
   background-position: center center;
   background-size: cover;
 }
-header.masthead .masthead-subheading, .legue-of-legends, .counter-strike {
+header.masthead .masthead-subheading, .league-of-legends, .counter-strike {
   font-size: 1rem;
   font-style: italic;
   line-height: 1.5rem;
   margin-bottom: 25px;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
+header.masthead .masthead-heading, .league-of-legends, .counter-strike {
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 3.25rem;
@@ -10994,20 +10994,20 @@ header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
     padding-top: 3rem;
     padding-bottom: 3rem;  
   }
-  header.masthead .masthead-subheading, .legue-of-legends, .counter-strike {
+  header.masthead .masthead-subheading, .league-of-legends, .counter-strike {
     font-size: 2.25rem;
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
   }
-  header.masthead .masthead-heading, .legue-of-legends, .counter-strike {
+  header.masthead .masthead-heading, .league-of-legends, .counter-strike {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 3rem;
     margin-top: auto;
     margin-bottom: 2;
   }
-  .legue-of-legends, .counter-strike{
+  .league-of-legends, .counter-strike{
     filter: brightness(90%);
     background-image: center;
     padding-top: 5rem;
