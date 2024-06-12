@@ -1,0 +1,2736 @@
+{
+	"info": {
+		"_postman_id": "37ff0084-6647-45ec-86bc-13e25cc1e58e",
+		"name": "Skin Score API",
+		"description": "### 📑 API Skin Score\n\n#### Introdução\n\nDocumentação da API do projeto interdisciplinar do 3º semestre da Fatec Franca Dr. Thomaz Novelino. Esta API permite o gerenciamento completo de usuários, skins, jogos e comentários, incluindo a criação, leitura, atualização e exclusão (CRUD) de registros em um banco de dados MongoDB.\n\n#### 📖 Visão Geral\n\nAs informações contidas nesta documentação têm a finalidade de auxiliar no uso da API, fornecendo detalhes sobre os endpoints disponíveis, exemplos de requisições e respostas, além de informações sobre autenticação e códigos de resposta.\n\n#### 🌐 URL Base\n\nA URL base para acessar a API é: [https://skin-score-api.onrender.com/](https://skin-score-api.onrender.com/)\n\n#### 🔐 Autenticação\n\nAtualmente, esta API não requer autenticação para acessar os endpoints.\n\n#### 📬 Códigos de Resposta\n\nOs códigos de resposta da API são padronizados conforme descrito abaixo:\n\n- **200 OK**: Para as respostas de sucesso ao buscar todos os registros, um registro por ID, atualizar e deletar um registro.\n    \n- **201 Created**: Para a criação bem-sucedida de um novo registro.\n    \n- **400 Bad Request**: Para erros de validação ou requisições inválidas.\n    \n- **404 Not Found**: Quando o registro não é encontrado para as operações de busca, atualização ou exclusão.\n    \n- **500 Internal Server Error**: Para qualquer erro interno do servidor durante as operações de criação, busca, atualização ou exclusão de um registro.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10153436"
+	},
+	"item": [
+		{
+			"name": "📤 -  Criação de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Eduardo Silva\",\r\n  \"email\": \"eduardosilva@gmail.com\",\r\n  \"password\": \"Senha1234\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios"
+					]
+				},
+				"description": "Cria um novo usuário."
+			},
+			"response": [
+				{
+					"name": "Criação de usuário",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Eduardo Silva\",\r\n  \"email\": \"eduardosilva@gmail.com\",\r\n  \"password\": \"Senha1234\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:25:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "143"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b37cd8ff396a-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c1-kbxfIuOOojDN7nRASjLJIf5rJyY\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "956ec150-52a7-4fbe"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Usuário criado com sucesso!\",\n    \"_id\": \"6668eadb3a0592d8fd36295c\",\n    \"created_at\": \"2024-06-12T00:24:59.908Z\",\n    \"createdAt\": \"2024-06-12T00:24:59.908Z\",\n    \"updatedAt\": \"2024-06-12T00:24:59.908Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "📥  - Obter todos os usuários",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Guilherme Luis\",\r\n  \"email\": \"guilherme.luis@gmail.com\",\r\n  \"password\": \"Lol123\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios"
+					]
+				},
+				"description": "Retorna todos os usuários."
+			},
+			"response": [
+				{
+					"name": "Obter todos os usuários",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Guilherme Luis\",\r\n  \"email\": \"guilherme.luis@gmail.com\",\r\n  \"password\": \"Lol123\",\r\n  \"profile_picture\": \"url\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:25:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "676"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b42839fd1366-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79c-bL1lLEgGOPo6QWWx4KGodjqMubQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "37e96927-d9a9-4ace"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"665cada2116006c0c7438949\",\n        \"username\": \"Fallen\",\n        \"email\": \"Fallen@MBR.com\",\n        \"password\": \"Fatec123\",\n        \"profile_picture\": \"https://drive.google.com/uc?export=view&id=1LDoNU9zhcvz5tnkpd4IrAfjfgj4djFfD\",\n        \"skin_collection\": [\n            \"665cd58aa13b26664fb7f2b4\",\n            \"665cb5853b835e3f8cdddd39\",\n            \"665cd5a7a13b26664fb7f2be\",\n            \"665cd599a13b26664fb7f2b8\"\n        ],\n        \"created_at\": \"2024-06-02T17:36:34.817Z\",\n        \"createdAt\": \"2024-06-02T17:36:34.820Z\",\n        \"updatedAt\": \"2024-06-04T23:09:10.925Z\",\n        \"__v\": 5\n    },\n    {\n        \"_id\": \"665cae71116006c0c743894c\",\n        \"username\": \"Kratos\",\n        \"email\": \"Kratos@gmail.com\",\n        \"password\": \"Fatec123\",\n        \"profile_picture\": \"https://drive.google.com/uc?export=view&id=1t_UyideiuNTq_xyjHukc7AvLxYzX_R3l\",\n        \"skin_collection\": [\n            \"665cc32942641de299157430\"\n        ],\n        \"created_at\": \"2024-06-02T17:40:01.535Z\",\n        \"createdAt\": \"2024-06-02T17:40:01.535Z\",\n        \"updatedAt\": \"2024-06-03T02:21:07.273Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"665f97645e324beb4b504457\",\n        \"username\": \"Guilherme Luis\",\n        \"email\": \"guilherme.luis@hotmail.com\",\n        \"password\": \"Lol123\",\n        \"profile_picture\": \"url\",\n        \"skin_collection\": [],\n        \"created_at\": \"2024-06-04T22:38:28.670Z\",\n        \"createdAt\": \"2024-06-04T22:38:28.674Z\",\n        \"updatedAt\": \"2024-06-04T23:03:48.659Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6668cbe36390d3aa7ac2e272\",\n        \"username\": \"Bruno\",\n        \"email\": \"brunoalgter@gmail.com\",\n        \"password\": \"Bruno1234\",\n        \"skin_collection\": [],\n        \"created_at\": \"2024-06-11T22:12:51.078Z\",\n        \"createdAt\": \"2024-06-11T22:12:51.081Z\",\n        \"updatedAt\": \"2024-06-11T22:12:51.081Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6668e4c43a0592d8fd362958\",\n        \"username\": \"Bruno Algarte\",\n        \"email\": \"bruninho@gmail.com\",\n        \"password\": \"Teste123\",\n        \"profile_picture\": \"url\",\n        \"skin_collection\": [],\n        \"created_at\": \"2024-06-11T23:59:00.357Z\",\n        \"createdAt\": \"2024-06-11T23:59:00.357Z\",\n        \"updatedAt\": \"2024-06-11T23:59:00.357Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6668eadb3a0592d8fd36295c\",\n        \"username\": \"Eduardo Silva\",\n        \"email\": \"eduardosilva@gmail.com\",\n        \"password\": \"Senha1234\",\n        \"profile_picture\": \"url\",\n        \"skin_collection\": [],\n        \"created_at\": \"2024-06-12T00:24:59.904Z\",\n        \"createdAt\": \"2024-06-12T00:24:59.908Z\",\n        \"updatedAt\": \"2024-06-12T00:24:59.908Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "📥 -  Obter um usuário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				},
+				"description": "Busca um usuário por ID."
+			},
+			"response": [
+				{
+					"name": "Obter um usuário por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/6668eadb3a0592d8fd36295c",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"6668eadb3a0592d8fd36295c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:25:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b498cdbe1366-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"120-5v7nZ6f0iGi2L8rwQnas5fHOSiQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "49323c8c-ffc5-4d6c"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6668eadb3a0592d8fd36295c\",\n    \"username\": \"Eduardo Silva\",\n    \"email\": \"eduardosilva@gmail.com\",\n    \"password\": \"Senha1234\",\n    \"profile_picture\": \"url\",\n    \"skin_collection\": [],\n    \"created_at\": \"2024-06-12T00:24:59.904Z\",\n    \"createdAt\": \"2024-06-12T00:24:59.908Z\",\n    \"updatedAt\": \"2024-06-12T00:24:59.908Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "🛠️ -  Atualizar um usuário por ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"algartebruno.luis@hotmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				},
+				"description": "Atualiza os dados de um usuário específico pelo ID."
+			},
+			"response": [
+				{
+					"name": "Atualizar um usuário por ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"algartebruno.luis@hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/6668cbe36390d3aa7ac2e272",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"6668cbe36390d3aa7ac2e272"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:27:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "245"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b71be89d2d0a-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"149-rWWqGrERkMOBOYfb70NTeURURzg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "6c930792-7527-468c"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Dados do usuário atualizados com sucesso\",\n    \"usuario\": {\n        \"_id\": \"6668cbe36390d3aa7ac2e272\",\n        \"username\": \"Bruno\",\n        \"email\": \"algartebruno.luis@hotmail.com\",\n        \"password\": \"Bruno1234\",\n        \"skin_collection\": [],\n        \"created_at\": \"2024-06-11T22:12:51.078Z\",\n        \"createdAt\": \"2024-06-11T22:12:51.081Z\",\n        \"updatedAt\": \"2024-06-12T00:27:28.235Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "❌ -  Deletar um usuário por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}"
+					]
+				},
+				"description": "Deleta um usuário específico pelo ID."
+			},
+			"response": [
+				{
+					"name": "Deletar um usuário por ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/6668eadb3a0592d8fd36295c",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"6668eadb3a0592d8fd36295c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:26:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b5498b8c1366-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-nhSv4q4D4tc6ExOi88H/Trmj4Pw\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "9dfd0076-ddc4-4253"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Usuário deletado com sucesso\"\n}"
+				}
+			]
+		},
+		{
+			"name": "📤 -  Criar uma Skin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Nome da Skin\",\r\n  \"description\": \"Descrição da Skin\",\r\n  \"type\": \"Tipo da Skin\",\r\n  \"image\": \"URL da Imagem\",\r\n  \"price\": 100,\r\n  \"rarity\": \"Raridade da Skin\",\r\n  \"game\": \"665cb13d3b835e3f8cdddd33\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins"
+					]
+				},
+				"description": "Cria uma nova skin."
+			},
+			"response": [
+				{
+					"name": "Criar uma Skin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nome da Skin\",\r\n  \"description\": \"Descrição da Skin\",\r\n  \"type\": \"Tipo da Skin\",\r\n  \"image\": \"URL da Imagem\",\r\n  \"price\": 100,\r\n  \"rarity\": \"Raridade da Skin\",\r\n  \"game\": \"665cb13d3b835e3f8cdddd33\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 00:29:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925b9c278d505cd-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18f-EJ7JzzISBnZJTlZfr8RMjvqRa0s\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "46f7cc28-5d11-45e9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Skin criada com sucesso\",\n    \"skin\": {\n        \"name\": \"Nome da Skin\",\n        \"description\": \"Descrição da Skin\",\n        \"type\": \"Tipo da Skin\",\n        \"image\": \"URL da Imagem\",\n        \"price\": 100,\n        \"rarity\": \"Raridade da Skin\",\n        \"note\": 0,\n        \"totalRating\": 0,\n        \"ratingCount\": 0,\n        \"game\": \"665cb13d3b835e3f8cdddd33\",\n        \"_id\": \"6668ebdc3a0592d8fd362963\",\n        \"createdAt\": \"2024-06-12T00:29:16.799Z\",\n        \"updatedAt\": \"2024-06-12T00:29:16.799Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "📤 - Adicionar uma skin ao usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"skinId\": \"665cb71f42641de29915741e\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}/add-skin",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"add-skin"
+					]
+				},
+				"description": "Adiciona uma skin específica a um usuário específico."
+			},
+			"response": [
+				{
+					"name": "Adicionar uma skin ao usuário",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"skinId\": \"665cb71f42641de29915741e\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/665cae71116006c0c743894c/add-skin",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"665cae71116006c0c743894c",
+								"add-skin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:01:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "349"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925e8751e695722-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e3-qS2x5o/BEuqcowr0+8vnSvKy7gY\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3d917d78-c062-4b9f"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Skin adicionada ao skin_collection do usuário com sucesso\",\n    \"usuario\": {\n        \"_id\": \"665cae71116006c0c743894c\",\n        \"username\": \"Kratos\",\n        \"email\": \"Kratos@gmail.com\",\n        \"password\": \"Fatec123\",\n        \"profile_picture\": \"https://drive.google.com/uc?export=view&id=1t_UyideiuNTq_xyjHukc7AvLxYzX_R3l\",\n        \"skin_collection\": [\n            \"665cc32942641de299157430\",\n            \"665cb71f42641de29915741e\"\n        ],\n        \"created_at\": \"2024-06-02T17:40:01.535Z\",\n        \"createdAt\": \"2024-06-02T17:40:01.535Z\",\n        \"updatedAt\": \"2024-06-12T01:01:09.931Z\",\n        \"__v\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "📤 - Avaliar uma Skin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"665cada2116006c0c7438949\",\r\n  \"rating\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins/{id_skin}/rate",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins",
+						"{id_skin}",
+						"rate"
+					]
+				},
+				"description": "Avalia uma skin específica, atualizando a nota média da skin com base na avaliação fornecida pelo usuário."
+			},
+			"response": [
+				{
+					"name": "Avaliar uma Skin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"665cada2116006c0c7438949\",\r\n  \"rating\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins/665cb5853b835e3f8cdddd39/rate",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins",
+								"665cb5853b835e3f8cdddd39",
+								"rate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:07:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "722"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f1279ff6058f-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"451-lxLByQUNW1sVnWEsLwoT37hczuo\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "fdb963a6-659f-495d"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Nota atualizada com sucesso\",\n    \"skin\": {\n        \"_id\": \"665cb5853b835e3f8cdddd39\",\n        \"name\": \"AK-47 Asiimov\",\n        \"description\": \"A AK-47 Asiimov é uma skin icônica e futurista que captura a essência da ficção científica. Com um design elegante e moderno, esta skin apresenta um esquema de cores vibrante em branco, preto e laranja, inspirado na estética sci-fi. As linhas geométricas e os detalhes precisos lembram tecnologias avançadas e conceitos de engenharia de ponta. A Asiimov transforma a AK-47 em uma peça de arte contemporânea, ideal para jogadores que desejam se destacar no campo de batalha com estilo e inovação. Seja no calor da ação ou em momentos de estratégia, a Asiimov é a escolha perfeita para aqueles que buscam combinar desempenho e design de ponta.\",\n        \"type\": \"AK-47\",\n        \"image\": \"https://drive.usercontent.google.com/download?id=1hd5UYsBTcAHWRlP7Yvfhd7YqukHlQjKz&export=view&authuser=0\",\n        \"price\": 3000,\n        \"rarity\": \"Raro\",\n        \"note\": 3.8,\n        \"game\": \"665cb13d3b835e3f8cdddd33\",\n        \"createdAt\": \"2024-06-02T18:10:13.974Z\",\n        \"updatedAt\": \"2024-06-12T01:07:05.788Z\",\n        \"__v\": 0,\n        \"ratingCount\": 5,\n        \"totalRating\": 19\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "📥 - Listar todas as Skins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins"
+					]
+				},
+				"description": "Lista todas as skins disponíveis no banco de dados."
+			},
+			"response": [
+				{
+					"name": "Listar todas as Skins",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:04:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925ecfdac7839b8-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f1d0-pkmvSbLbzCXf23a+GqBKMlQvJTg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "be197af7-913a-43fc"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Skins encontradas com sucesso\",\n    \"skins\": [\n        {\n            \"_id\": \"665cb5853b835e3f8cdddd39\",\n            \"name\": \"AK-47 Asiimov\",\n            \"description\": \"A AK-47 Asiimov é uma skin icônica e futurista que captura a essência da ficção científica. Com um design elegante e moderno, esta skin apresenta um esquema de cores vibrante em branco, preto e laranja, inspirado na estética sci-fi. As linhas geométricas e os detalhes precisos lembram tecnologias avançadas e conceitos de engenharia de ponta. A Asiimov transforma a AK-47 em uma peça de arte contemporânea, ideal para jogadores que desejam se destacar no campo de batalha com estilo e inovação. Seja no calor da ação ou em momentos de estratégia, a Asiimov é a escolha perfeita para aqueles que buscam combinar desempenho e design de ponta.\",\n            \"type\": \"AK-47\",\n            \"image\": \"https://drive.usercontent.google.com/download?id=1hd5UYsBTcAHWRlP7Yvfhd7YqukHlQjKz&export=view&authuser=0\",\n            \"price\": 3000,\n            \"rarity\": \"Raro\",\n            \"note\": 4,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T18:10:13.974Z\",\n            \"updatedAt\": \"2024-06-08T19:36:43.318Z\",\n            \"__v\": 0,\n            \"ratingCount\": 4,\n            \"totalRating\": 16\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cb71f42641de29915741e\",\n            \"name\": \"M4A1-S - Hyper Beast\",\n            \"description\": \"A M4A1-S Hyper Beast é uma das skins mais vibrantes e detalhadas disponíveis para esta arma. Com um design psicodélico e monstruoso, ela apresenta uma fera colorida e feroz estampada ao longo do corpo da arma. As cores vivas, como azul, verde, vermelho e amarelo, se misturam de forma a criar um visual impactante e quase surreal. A Hyper Beast transforma a M4A1-S em uma verdadeira obra de arte, ideal para jogadores que querem um estilo único e intimidante. Esta skin é perfeita para quem deseja chamar a atenção e se destacar no campo de batalha.\",\n            \"type\": \"M4A1-S\",\n            \"image\": \"https://drive.google.com/uc?id=153jaWuX721swmryBcefBIx9JMPFRDrRi\",\n            \"price\": 400,\n            \"rarity\": \"Lendária\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T18:17:03.090Z\",\n            \"updatedAt\": \"2024-06-08T19:42:43.883Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc1fe42641de299157422\",\n            \"name\": \"AWP Dragon Lore\",\n            \"description\": \"A Dragon Lore é uma das skins mais icônicas e desejadas do mundo dos jogos. Esta skin lendária da AWP possui um design detalhado e majestoso, com um dragão mítico cuspindo fogo ao longo de seu corpo. A combinação de cores vibrantes e a arte meticulosa fazem desta skin uma verdadeira obra-prima. A Dragon Lore é sinônimo de prestígio e status, sendo frequentemente associada aos jogadores de elite. Além de sua beleza estonteante, a raridade e o valor desta skin a tornam um verdadeiro tesouro no arsenal de qualquer jogador.\",\n            \"type\": \"AWP\",\n            \"image\": \"https://drive.google.com/uc?id=1g65QJ4Bdzb4soqxiOe0tZNa6AJ8lvPA8\",\n            \"price\": 40000,\n            \"rarity\": \"Lendário\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:03:26.511Z\",\n            \"updatedAt\": \"2024-06-08T19:39:27.510Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc23d42641de299157424\",\n            \"name\": \"Desert Eagle - Kumicho Dragon\",\n            \"description\": \"A Desert Eagle | Kumicho Dragon é uma skin impressionante para a lendária pistola Desert Eagle. Inspirada na cultura japonesa e na arte do dragão, esta skin apresenta um design intricado e detalhado. O dragão envolve toda a extensão da arma, com linhas fluidas e curvas que criam uma sensação de movimento e dinamismo. Detalhes vívidos e cores vibrantes, como vermelho, dourado e preto, são usados para realçar os contornos do dragão e criar um visual impressionante. A combinação de elementos tradicionais japoneses com um toque moderno faz da Desert Eagle | Kumicho Dragon uma escolha popular entre os colecionadores e entusiastas de skins.\",\n            \"type\": \"Desert Eagle\",\n            \"image\": \"https://drive.google.com/uc?id=1-e_RKxQYtz3dmarBlpSmBemxPTZnI5Sd\",\n            \"price\": 250,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:04:29.709Z\",\n            \"updatedAt\": \"2024-06-09T17:05:18.526Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc25c42641de299157426\",\n            \"name\": \"Glock-18 - Fade\",\n            \"description\": \"A Glock-18 | Fade é uma skin deslumbrante para a pistola Glock-18, conhecida por sua transição suave de cores vibrantes. Com tons de amarelo, laranja, rosa e vermelho, esta skin apresenta um gradiente impressionante que cria um efeito de desvanecimento gradual ao longo da arma. A Glock-18 | Fade é popular entre os jogadores por sua aparência chamativa e única, sendo uma escolha preferida para aqueles que desejam adicionar um toque de estilo aos seus equipamentos no jogo.\",\n            \"type\": \"Glock-18\",\n            \"image\": \"https://drive.google.com/uc?id=16UCeB-FibFixE8w6nvzvZmMewXMNrxpZ\",\n            \"price\": 300,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:05:00.614Z\",\n            \"updatedAt\": \"2024-06-09T17:08:43.892Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc28242641de299157428\",\n            \"name\": \"USP-S - Kill Confirmed\",\n            \"description\": \"A USP-S | Kill Confirmed é uma skin que transmite uma aura de letalidade e mistério. Com um fundo escuro e detalhes em amarelo vibrante, esta skin apresenta uma arte que lembra etiquetas de crime, completando o tema de confirmação de morte. O design detalhado inclui imagens de caveiras e balas, sugerindo uma história de ação e perigo. Esta skin é uma escolha popular entre os jogadores que buscam uma aparência agressiva e marcante para sua USP-S.\",\n            \"type\": \"USP-S\",\n            \"image\": \"https://drive.google.com/uc?id=1jOn_Vjs6qx6Jaagvu2ZgGuCicfV3TPoc\",\n            \"price\": 100,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:05:38.881Z\",\n            \"updatedAt\": \"2024-06-09T17:02:06.972Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc2a942641de29915742a\",\n            \"name\": \"AK-47 Redline\",\n            \"description\": \"A AK-47 Redline é uma skin que exala elegância e poder. Com um design minimalista e agressivo, ela apresenta um acabamento em preto fosco com detalhes em vermelho vibrante que correm ao longo do corpo da arma. A simplicidade do design é contrastada pela intensidade das linhas vermelhas, criando uma aparência arrojada e dinâmica. A Redline é ideal para jogadores que apreciam um visual limpo e impactante, sem sacrificar a sofisticação. Seja em confrontos intensos ou momentos de precisão, a AK-47 Redline se destaca como uma escolha estilosa e formidável no campo de batalha.\",\n            \"type\": \"AK-47\",\n            \"image\": \"https://drive.usercontent.google.com/download?id=13HNhrzuuWdvI6OKbQUbauG09oDtfMZ4Z&export=view&authuser=0\",\n            \"price\": 250,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:06:17.220Z\",\n            \"updatedAt\": \"2024-06-08T19:37:25.643Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc2cb42641de29915742c\",\n            \"name\": \"M4A4 - Howl\",\n            \"description\": \"Esta skin apresenta um design feroz com a imagem de um lobo uivante em meio a chamas vermelhas e pretas, dando à arma uma aparência ameaçadora e agressiva. O Howl é particularmente notável não apenas pelo seu design impressionante, mas também pela sua história única, tendo sido removida das caixas de loot e se tornando um item Contraband. Este status especial faz dela uma das skins mais cobiçadas e valiosas no jogo.\",\n            \"type\": \"M4A4\",\n            \"image\": \"https://drive.google.com/uc?id=1uyG2I8al5Rg7JTt94_g_LJ4lvV5a1AzQ\",\n            \"price\": 22000,\n            \"rarity\": \"Lendário\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:06:51.721Z\",\n            \"updatedAt\": \"2024-06-09T16:50:35.086Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc30742641de29915742e\",\n            \"name\": \"P90 - Death by Kitty\",\n            \"description\": \"A P90 | Death by Kitty é uma skin que combina um design vibrante e divertido com a potência da P90. Esta skin apresenta um tema colorido com ilustrações de gatos em estilo cartoon, criando um contraste único com a natureza agressiva da arma. O visual é dominado por tons de rosa, roxo e azul, tornando-a uma escolha visualmente atraente e distinta no campo de batalha. Ideal para jogadores que querem adicionar um toque de humor e estilo à sua coleção.\",\n            \"type\": \"P90\",\n            \"image\": \"https://drive.google.com/uc?id=1Ar4GnzZiRAsEn1iS3Xc9LCQDeq-UnnPq\",\n            \"price\": 800,\n            \"rarity\": \"Raro\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:07:51.976Z\",\n            \"updatedAt\": \"2024-06-09T16:57:48.010Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc32942641de299157430\",\n            \"name\": \"MP7 - Bloodsport\",\n            \"description\": \"A MP7 | Bloodsport é uma skin que exala energia e vigor, apresentando um design vibrante em vermelho, preto e branco com diversos logotipos e símbolos futuristas espalhados por sua superfície. Inspirada no visual dos carros de corrida esportivos, a Bloodsport transforma a MP7 em uma peça de arte moderna e agressiva, ideal para jogadores que desejam adicionar um toque de velocidade e intensidade ao seu arsenal.\",\n            \"type\": \"MP7\",\n            \"image\": \"https://drive.google.com/uc?id=1QYxk8VMafRklfgS0q0y3kiDs4AZz6DBP\",\n            \"price\": 150,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T19:08:25.881Z\",\n            \"updatedAt\": \"2024-06-09T16:54:47.170Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cd5b4a13b26664fb7f2c4\",\n            \"name\": \"Aphelios - EDG\",\n            \"description\": \"Aphelios EDG celebra a vitória do EDward Gaming no campeonato mundial de League of Legends de 2021. Esta skin transforma Aphelios em um guerreiro imponente, adornado com o tema preto e dourado característico da equipe EDG. Suas armas são elegantemente redesenhadas para refletir a estética do time, com detalhes brilhantes e efeitos visuais que destacam a precisão e letalidade de Aphelios. Além de novas animações de habilidades, a skin também inclui efeitos sonoros exclusivos e uma dança comemorativa que faz referência à vitória do EDG. É uma homenagem gloriosa a um momento icônico na história do e-sport.\",\n            \"type\": \"Aphelios\",\n            \"image\": \"https://drive.usercontent.google.com/download?id=1De4njc_DVF9GWtXQQ8zTRat0NvVUkJsD&export=view&authuser=0\",\n            \"price\": 1820,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-02T20:27:32.538Z\",\n            \"updatedAt\": \"2024-06-09T17:16:53.879Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6661028ee58ab9c02318a037\",\n            \"name\": \"AK-47 The Empress\",\n            \"description\": \"The Empress é uma das skins mais distintas e desejadas, com um design vibrante inspirado na realeza e na arte clássica. Esta skin apresenta uma ilustração detalhada e colorida de uma imperatriz, simbolizando poder e autoridade. O corpo da arma é adornado com cores ricas e elementos dourados, destacando-se no campo de batalha. A The Empress não só transforma a aparência da AK-47, mas também adiciona um toque de sofisticação e exclusividade ao seu arsenal. Perfeita para jogadores que desejam demonstrar seu status e gosto refinado enquanto dominam suas partidas.\",\n            \"type\": \"AK-47\",\n            \"image\": \"https://drive.usercontent.google.com/download?id=1XHB3GdBctEyuaVC_qgL7OwMdwu1pj930&export=view&authuser=0\",\n            \"price\": 1200,\n            \"rarity\": \"Muito Raro\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-06T00:27:58.413Z\",\n            \"updatedAt\": \"2024-06-08T19:38:20.512Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66648b235ff3ef4f51ff5183\",\n            \"name\": \"AWP - Gungir\",\n            \"description\": \"A Gungnir é uma skin de AWP que impressiona por seu design majestoso e detalhado, inspirado na lendária lança do deus nórdico Odin. Com um esquema de cores predominantemente azul e prata, a Gungnir apresenta intrincados padrões geométricos e runas antigas ao longo de seu corpo, evocando a mitologia e o poder divino. Esta skin não é apenas uma arma, mas uma peça de arte, destacando-se no arsenal de qualquer jogador. Sua raridade extrema e o valor elevado a tornam uma aquisição cobiçada, simbolizando prestígio e habilidade no campo de batalha.\",\n            \"type\": \"AWP\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 10000,\n            \"rarity\": \"Lendário\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-08T16:47:31.735Z\",\n            \"updatedAt\": \"2024-06-08T19:40:59.026Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66648c065ff3ef4f51ff5185\",\n            \"name\": \"AWP - Phobos\",\n            \"description\": \"A AWP Phobos é uma skin que traz um design futurista e tecnológico para uma das armas mais icônicas do jogo. Com um esquema de cores preto e verde neon, a Phobos apresenta linhas geométricas afiadas e detalhes que lembram circuitos eletrônicos, dando à arma uma aparência de alta tecnologia e avançada. Este visual é complementado por acabamentos metálicos que reforçam o tema tecnológico da skin. A AWP Phobos é perfeita para jogadores que desejam se destacar com um estilo moderno e imponente no campo de batalha.\",\n            \"type\": \"AWP\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 30,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-08T16:51:18.404Z\",\n            \"updatedAt\": \"2024-06-08T19:41:15.835Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6664b4c7c3128934e37dd6ab\",\n            \"name\": \"M4A1-S - Atomic Alloy\",\n            \"description\": \"A M4A1-S Atomic Alloy é uma skin extremamente popular, conhecida por sua estética futurista e industrial. Esta skin apresenta um design predominantemente metálico, com uma combinação de cores de prata e laranja que se destacam de maneira impressionante. \",\n            \"type\": \"M4A1-S\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 100,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-08T19:45:11.514Z\",\n            \"updatedAt\": \"2024-06-08T19:46:06.344Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665dcc5e86edf9f31889e1f\",\n            \"name\": \"M4A1-S - Hot Rod Market\",\n            \"description\": \"O design da Hot Rod é dominado por um vermelho metálico brilhante que cobre toda a extensão da arma. Esse vermelho intenso é complementado por detalhes em prata nas partes funcionais da arma, como o carregador e a coronha, criando um contraste marcante que realça a beleza do acabamento. A superfície da arma brilha sob a luz, destacando a qualidade e o cuidado na sua criação. \",\n            \"type\": \"M4A1-S\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 2500,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:48:05.114Z\",\n            \"updatedAt\": \"2024-06-09T16:48:28.273Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665ddabe86edf9f31889e23\",\n            \"name\": \"M4A4 - Buzz Kill \",\n            \"description\": \"A M4A4 | Buzz Kill é uma skin que destaca a M4A4 com um design moderno e impactante, apresentando cores vibrantes e padrões geométricos em amarelo e preto. Esta skin dá à arma uma aparência industrial e dinâmica, lembrando um padrão de advertência que é ao mesmo tempo estético e funcional. O design detalhado e as cores ousadas fazem da Buzz Kill uma escolha popular entre os jogadores que querem uma combinação de estilo e visibilidade no campo de batalha.\",\n            \"type\": \"M4A4\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:51:55.746Z\",\n            \"updatedAt\": \"2024-06-09T16:51:55.746Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665dde6e86edf9f31889e25\",\n            \"name\": \"M4A4 - Bullet Rain Market \",\n            \"description\": \"A M4A4 | Bullet Rain apresenta um design que combina tons de azul, vermelho e branco, com ilustrações de balas chovendo sobre a superfície da arma. Este visual dinâmico e chamativo é ideal para jogadores que desejam destacar-se no campo de batalha. Com detalhes gráficos que evocam uma tempestade de balas, a Bullet Rain oferece um toque artístico e poderoso para a M4A4, tornando-a uma escolha popular entre os entusiastas de skins.\",\n            \"type\": \"M4A4\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 300,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:52:54.214Z\",\n            \"updatedAt\": \"2024-06-09T16:52:54.214Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665de9fe86edf9f31889e28\",\n            \"name\": \"MP7 - Nemesis\",\n            \"description\": \"A MP7 | Nemesis apresenta um design assustador e impactante, com uma estética que remete a criaturas mitológicas ou monstruosas. Seu esquema de cores é dominado por tons sombrios e detalhes em azul elétrico e roxo, criando um contraste marcante. Esta skin transforma a MP7 em uma arma que parece saída de um pesadelo, ideal para jogadores que querem intimidar seus adversários com um visual ameaçador e único.\",\n            \"type\": \"MP7\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 50,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:55:59.221Z\",\n            \"updatedAt\": \"2024-06-09T16:55:59.221Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665ded1e86edf9f31889e2a\",\n            \"name\": \"MP7 - Fade\",\n            \"description\": \"A MP7 | Fade é uma skin que encanta pela sua simplicidade e elegância. Com um design que apresenta um gradiente de cores que vão do amarelo ao roxo, a skin Fade é conhecida por seu acabamento polido e sofisticado. Esta skin confere à MP7 um visual moderno e refinado, ideal para jogadores que apreciam um estilo mais clean e chamativo ao mesmo tempo. O acabamento metálico adiciona um brilho extra, destacando-se em qualquer partida.\",\n            \"type\": \"MP7\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 500,\n            \"rarity\": \"Raro\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:56:49.428Z\",\n            \"updatedAt\": \"2024-06-09T16:56:49.428Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665df49e86edf9f31889e2d\",\n            \"name\": \"P90 - Cold Blooded\",\n            \"description\": \"A P90 | Cold Blooded é uma skin que evoca uma sensação de frieza e letalidade. Com um design predominante em tons de azul e cinza, esta skin apresenta detalhes de gelo e rachaduras, criando uma estética congelante e distinta. O padrão de camuflagem angular e geométrico adiciona uma sensação de modernidade e agressividade à arma. Combinando estilo e funcionalidade, a P90 | Cold Blooded é uma escolha popular entre os jogadores que procuram uma skin elegante e eficaz para suas armas.\",\n            \"type\": \"P90\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 50,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:58:49.528Z\",\n            \"updatedAt\": \"2024-06-09T16:58:49.528Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665df73e86edf9f31889e2f\",\n            \"name\": \"P90 - Module\",\n            \"description\": \"A P90 | Module apresenta um design futurista e tecnológico, inspirado em conceitos de alta tecnologia e cyberpunk. Com linhas geométricas distintas e elementos de circuitos eletrônicos, esta skin evoca uma sensação de precisão e eficiência. Os tons de verde e cinza dão à arma uma aparência de máquina avançada, enquanto os detalhes luminosos adicionam um toque de energia e vitalidade. Ideal para jogadores que buscam uma skin moderna e elegante para sua P90.\",\n            \"type\": \"P90\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 30,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T16:59:31.307Z\",\n            \"updatedAt\": \"2024-06-09T16:59:31.307Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e04ce86edf9f31889e32\",\n            \"name\": \"USP-S - Torque\",\n            \"description\": \"A USP-S | Torque é uma skin que combina elementos de elegância e modernidade. Com um padrão geométrico intricado em tons de azul, esta skin apresenta linhas limpas e detalhes nítidos, criando uma estética sofisticada. Os contrastes de luz e sombra dão à skin uma aparência dinâmica, enquanto o design geral transmite uma sensação de precisão e estilo. A USP-S | Torque é uma escolha popular entre os jogadores que procuram uma skin elegante e estilizada para sua USP-S.\",\n            \"type\": \"USP-S\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 20,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:03:08.150Z\",\n            \"updatedAt\": \"2024-06-09T17:03:08.150Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e078e86edf9f31889e34\",\n            \"name\": \"USP-S - Orion\",\n            \"description\": \"A USP-S | Orion é uma skin marcante e icônica para a pistola USP-S. Com um design futurista e elementos estilizados, esta skin apresenta um padrão complexo de linhas e formas em tons de azul e preto. O contraste entre as cores vibrantes e os detalhes escuros confere à skin uma aparência elegante e moderna. Os detalhes intrincados adicionam profundidade e textura à superfície da arma, criando uma estética visualmente atraente. A USP-S | Orion é uma escolha popular entre os jogadores que procuram uma skin única e distintiva para sua USP-S.\",\n            \"type\": \"USP-S\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 150,\n            \"rarity\": \"Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:03:52.609Z\",\n            \"updatedAt\": \"2024-06-09T17:03:52.609Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e108e86edf9f31889e37\",\n            \"name\": \"Desert Eagle - Cobalt Disruption\",\n            \"description\": \"A Desert Eagle | Cobalt Disruption é uma skin marcante para a pistola Desert Eagle. Com um design futurista e elementos de alta tecnologia, esta skin apresenta uma combinação de tons azuis e pretos que criam um visual moderno e elegante. Linhas geométricas e detalhes metálicos adicionam profundidade ao design, enquanto padrões abstratos e texturas intrincadas conferem uma aparência única à arma. A Desert Eagle | Cobalt Disruption é uma escolha popular entre os jogadores que buscam uma skin sofisticada e estilosa para a Desert Eagle.\",\n            \"type\": \"Desert Eagle\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 25,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:06:16.987Z\",\n            \"updatedAt\": \"2024-06-09T17:06:16.987Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e138e86edf9f31889e39\",\n            \"name\": \"Desert Eagle - Oxide Blaze\",\n            \"description\": \"A Desert Eagle | Oxide Blaze é uma skin exclusiva para a icônica pistola Desert Eagle. Com um visual impressionante, esta skin apresenta um padrão de óxido em tons de laranja, vermelho e marrom que se assemelha ao efeito de metal oxidado. Os detalhes intrincados e as texturas realistas criam uma aparência envelhecida e desgastada, dando à arma um visual único e distintivo. A Desert Eagle | Oxide Blaze é uma escolha popular entre os colecionadores e jogadores que buscam uma skin com um design único e estiloso para a Desert Eagle.\",\n            \"type\": \"Desert Eagle\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 60,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:07:04.525Z\",\n            \"updatedAt\": \"2024-06-09T17:07:04.525Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e1dfe86edf9f31889e3c\",\n            \"name\": \"Glock-18 - Neo-Noir\",\n            \"description\": \"A Glock-18 | Neo-Noir é uma skin elegante e futurista para a pistola Glock-18, apresentando um design inspirado em elementos cyberpunk. Com detalhes em preto profundo, branco e vermelho, esta skin exibe padrões geométricos e linhas arrojadas que evocam uma estética moderna e tecnológica. O contraste entre as cores intensas e o fundo escuro dá à Glock-18 | Neo-Noir uma aparência única e sofisticada, adequada para qualquer operador que deseje se destacar no campo de batalha.\",\n            \"type\": \"Glock-18\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 500,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:09:51.149Z\",\n            \"updatedAt\": \"2024-06-09T17:09:51.149Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e26de86edf9f31889e3e\",\n            \"name\": \"Glock-18 - Wasteland Rebel\",\n            \"description\": \"A skin Glock-18 Wasteland Rebel oferece uma aparência única inspirada em cenários pós-apocalípticos. Com seu design marcante e detalhes que evocam uma sensação de desolação e rebeldia, esta skin é uma escolha popular entre os jogadores. O preço pode variar dependendo da raridade e condição, mas geralmente é apreciada por sua estética única e impactante.\",\n            \"type\": \"Glock-18\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 50,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:12:13.253Z\",\n            \"updatedAt\": \"2024-06-09T17:12:13.253Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e3c4e86edf9f31889e41\",\n            \"name\": \"Aphelios - Emissário da Escuridão\",\n            \"description\": \"A skin \\\"Aphelios Emissário da Escuridão\\\" transforma o portador das armas em um agente do caos e mistério. Envolto em um manto sombrio, Aphelios maneja armas que parecem forjadas nas profundezas do abismo, cada uma emanando uma aura sinistra e envolta em escuridão pulsante. Suas habilidades são acompanhadas por efeitos visuais sombrios, com sombras dançantes e flashes de luz obscura, criando uma presença aterrorizante no campo de batalha. Seus movimentos e ataques são mais fluídos e ameaçadores, reforçando sua identidade como um emissário da escuridão. Além disso, a skin oferece novas animações de recall e efeitos sonoros personalizados que completam a temática sombria e enigmática.\",\n            \"type\": \"Aphelios\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:17:56.096Z\",\n            \"updatedAt\": \"2024-06-09T17:17:56.096Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e3ffe86edf9f31889e43\",\n            \"name\": \"Aphelios - NightBlinder\",\n            \"description\": \"Aphelios NightBlinder Slash é uma skin que transforma o guerreiro Lunari em um assassino das sombras. Envolto em um traje negro e furtivo, Aphelios maneja suas armas com uma precisão mortal e uma aura de mistério. Cada uma de suas armas é remodelada com detalhes sombrios e lâminas afiadas que brilham sob a luz da lua. A skin inclui efeitos visuais novos, com animações de habilidades que evocam sombras e névoa, aumentando a atmosfera de segredo e perigo. Os sons suaves e silenciosos que acompanham suas ações dão uma sensação de agilidade e letalidade. Ao ativar suas habilidades, Aphelios exibe movimentos rápidos e decisivos, deixando um rastro de sombras e escuridão no campo de batalha.\",\n            \"type\": \"Aphelios\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:18:55.911Z\",\n            \"updatedAt\": \"2024-06-09T17:18:55.911Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e472e86edf9f31889e46\",\n            \"name\": \"Darius - Bioforge\",\n            \"description\": \"Darius Bioforge é uma skin que transforma o temido comandante noxiano em um guerreiro cibernético aprimorado. Com uma armadura tecnológica verde neon e preto, Darius se torna uma máquina de guerra implacável, equipada com próteses cibernéticas e uma gigantesca machadinha futurista. Seus ataques e habilidades são acompanhados por efeitos visuais eletrônicos, incluindo faíscas e explosões de energia verde. O som metálico de seus golpes reforça a brutalidade e a força aumentada pela tecnologia. Em combate, Darius Bioforge é uma força a ser temida, combinando sua ferocidade natural com melhorias tecnológicas avançadas, tornando-o ainda mais mortal.\",\n            \"type\": \"Darius\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1500,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:20:50.230Z\",\n            \"updatedAt\": \"2024-06-09T17:20:50.230Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e499e86edf9f31889e48\",\n            \"name\": \"Darius - DreadNova\",\n            \"description\": \"Darius Dreadnova é uma skin que reimagina o implacável comandante noxiano como um temido pirata espacial. Vestido com uma armadura futurista de aparência robusta e desgastada pelo tempo, Darius empunha uma imensa machadinha que brilha com uma luz ameaçadora. Sua armadura é adornada com detalhes luminosos em vermelho e laranja, evocando a sensação de um veterano das profundezas do espaço. Os ataques e habilidades de Darius são acompanhados por efeitos visuais que lembram energia espacial e tecnologia avançada, enquanto os sons metálicos e explosões acrescentam um toque épico ao seu conjunto de habilidades. Com a skin Dreadnova, Darius é retratado como um conquistador galáctico, inspirando temor em todos os que se opõem a ele.\",\n            \"type\": \"Darius\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1820,\n            \"rarity\": \"Raro\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:21:29.346Z\",\n            \"updatedAt\": \"2024-06-09T17:21:29.346Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e4c3e86edf9f31889e4a\",\n            \"name\": \"Darius - Dunk Master\",\n            \"description\": \"Darius Dunk Master é uma skin icônica que transforma o temido comandante noxiano em um jogador de basquete profissional. Vestido com um uniforme de basquete estiloso, completo com uma faixa na cabeça e tênis esportivos, Darius troca sua tradicional machadinha por uma bola de basquete. Cada uma de suas habilidades é reimaginada com efeitos visuais inspirados no basquete, como enterradas explosivas e arremessos poderosos. Seus ataques são acompanhados por sons de bolas quicando e efeitos de multidão, trazendo a emoção de uma partida de basquete para o campo de batalha de League of Legends. Darius Dunk Master é conhecido por sua atitude confiante e por suas provocações inspiradas no esporte, fazendo dele uma escolha divertida e única para os fãs do jogo.\",\n            \"type\": \"Darius\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 2000,\n            \"rarity\": \"Raro\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:22:11.998Z\",\n            \"updatedAt\": \"2024-06-09T17:22:11.998Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e50be86edf9f31889e4d\",\n            \"name\": \"Ezreal - Ace Spades\",\n            \"description\": \"Ezreal Ace of Spades é uma skin elegante que reimagina o Prodigal Explorer como um sofisticado mestre dos jogos de cartas. Vestido com um terno preto estiloso, completo com uma gravata borboleta e detalhes dourados, Ezreal exibe uma aparência refinada e carismática. Sua manopla mágica é transformada em uma versão de alta classe, complementada por efeitos visuais que evocam o tema dos jogos de cartas. Suas habilidades são adornadas com símbolos de naipes e efeitos brilhantes, tornando cada disparo e habilidade uma exibição de sua destreza e charme. A skin também inclui novas animações e efeitos sonoros, reforçando o tema de cassino e adicionando um toque de sofisticação a cada movimento de Ezreal.\",\n            \"type\": \"Ezreal\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 750,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:23:23.079Z\",\n            \"updatedAt\": \"2024-06-09T17:23:23.079Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e545e86edf9f31889e4f\",\n            \"name\": \"Ezreal - Arcade\",\n            \"description\": \"Ezreal Arcade é uma skin vibrante e nostálgica que transforma o Prodigal Explorer em um herói de videogame dos anos 80. Com um traje colorido e futurista, inspirado nos clássicos jogos de arcade, Ezreal veste uma jaqueta neon, óculos de realidade aumentada e luvas high-tech. Sua manopla mágica é reimaginada como um dispositivo de jogo com luzes piscantes e efeitos pixelados. Todas as suas habilidades são remodeladas para incluir gráficos retrô e sons de arcade, fazendo com que cada habilidade pareça um movimento de um jogo de fliperama. A skin também inclui animações personalizadas e efeitos sonoros que transportam os jogadores para a era dourada dos jogos eletrônicos, oferecendo uma experiência visual e auditiva única e divertida.\",\n            \"type\": \"Ezreal\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:24:21.239Z\",\n            \"updatedAt\": \"2024-06-09T17:24:21.239Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e56de86edf9f31889e51\",\n            \"name\": \"Ezreal - Battle Academy\",\n            \"description\": \"Ezreal Academia de Batalha é uma skin que coloca o Prodigal Explorer no ambiente de uma escola de elite para jovens heróis e combatentes. Com um visual inspirado em animes de batalhas escolares, Ezreal veste um uniforme colegial estilizado com detalhes tecnológicos e acessórios modernos. Ele carrega uma mochila futurista e usa uma manopla aprimorada que emite brilhos energéticos e luzes neon. Suas habilidades recebem efeitos especiais dinâmicos, lembrando poderes mágicos e tecnológicos de séries de anime, com animações cheias de explosões de energia e traços luminosos. A skin também inclui novas animações de recall, onde Ezreal faz poses heroicas e interage com hologramas de seus colegas da Academia de Batalha, e efeitos sonoros que complementam a estética high-tech escolar, proporcionando uma experiência envolvente e eletrizante.\",\n            \"type\": \"Ezreal\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:25:01.300Z\",\n            \"updatedAt\": \"2024-06-09T17:25:01.300Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e5dde86edf9f31889e54\",\n            \"name\": \"Kayle - Judgement\",\n            \"description\": \"Kayle Julgamento é uma skin que reimagina a Justicar Kayle como uma figura angelical e imponente, símbolo de justiça divina e retribuição. Vestida com uma armadura dourada ornamentada, Kayle exibe asas majestosas que brilham com uma luz celestial. Seu elmo é adornado com detalhes intricados que destacam sua autoridade e poder. As habilidades de Kayle são envoltas em efeitos visuais deslumbrantes, com espadas de luz e auras resplandecentes que representam sua missão sagrada de julgar os impuros. O julgamento final é uma demonstração épica de seu poder, com uma explosão de energia divina que aniquila seus inimigos e abençoa seus aliados. As animações de recall e ataques são aprimoradas com efeitos de luz e som que reforçam a sensação de poder angelical, criando uma experiência de jogo imersiva e impressionante.\",\n            \"type\": \"Kayle\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 10000,\n            \"rarity\": \"Lendária\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:26:53.533Z\",\n            \"updatedAt\": \"2024-06-09T17:26:53.533Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e608e86edf9f31889e56\",\n            \"name\": \"Kayle - Asa de Éter\",\n            \"description\": \"A skin Kayle Asa de Éter transforma a guerreira celestial em uma figura de beleza etérea e poder transcendente. Vestida com uma armadura adornada com plumas reluzentes e uma túnica celestial, Kayle paira no campo de batalha com graça e majestade. Suas asas resplandecentes irradiam uma luz suave, emanando uma aura de serenidade e poder divino. As habilidades de Kayle são acompanhadas por efeitos visuais deslumbrantes, com lâminas de energia pura e auras cintilantes que capturam a essência de sua natureza celestial. O julgamento final é uma manifestação espetacular de seu poder, com uma explosão de energia que inflige punição aos inimigos e protege os aliados. As animações de recall e ataques são refinadas com elementos etéreos e luminosos, criando uma experiência de jogo envolvente e celestial.\",\n            \"type\": \"Kayle\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:27:36.491Z\",\n            \"updatedAt\": \"2024-06-09T17:27:36.491Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e64ae86edf9f31889e58\",\n            \"name\": \"Kayle - Battleborn/Morgana Exiled\",\n            \"description\": \"Na batalha entre o bem e o mal, as skins Kayle Battleborn e Morgana Exiled contam uma história de dualidade e conflito. Kayle, a guerreira celestial, aparece como a líder dos Battleborn, vestida em armadura dourada reluzente e adornada com símbolos sagrados. Ela irradia uma aura de justiça e poder divino, com suas asas resplandecentes prontas para proteger os inocentes e punir os malfeitores. Por outro lado, Morgana, a exilada, personifica o lado sombrio dessa luta eterna. Com sua armadura enegrecida e asas corrompidas, ela exala uma presença sinistra e desafiadora. Suas habilidades são envoltas em sombras e magia negra, refletindo sua natureza malévola e sedenta por vingança. O confronto entre essas duas forças opostas se desenrola em uma batalha épica, onde cada lado busca afirmar sua visão de justiça e poder sobre o outro.\",\n            \"type\": \"Kayle\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1500,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:28:42.258Z\",\n            \"updatedAt\": \"2024-06-09T17:28:42.258Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e687e86edf9f31889e5a\",\n            \"name\": \"Kayn - Soul Hunter\",\n            \"description\": \"Na skin Kayn Soul Hunter, o assassino sombrio Kayn se transforma em um caçador de almas impiedoso, imbuído de poderes misteriosos e sedento por conflito. Vestido em um manto negro e adornado com detalhes vermelhos que parecem pulsar com energia sinistra, Kayn emerge das sombras como uma figura ameaçadora e enigmática. Seu cabelo prateado brilha com um brilho sobrenatural, enquanto seus olhos, agora incandescentes em um tom vermelho ardente, refletem sua conexão com as trevas. Armado com sua foice sombria, ele caça suas presas implacavelmente, alimentando-se das almas que colhe durante suas batalhas. Cada golpe é um lembrete do poder que ele possui sobre seus inimigos, uma força indomável que se alimenta da escuridão que habita em seu interior.\",\n            \"type\": \"Kayn\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:29:43.591Z\",\n            \"updatedAt\": \"2024-06-09T17:29:43.591Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665e6a8e86edf9f31889e5c\",\n            \"name\": \"Kayn - Annimos\",\n            \"description\": \"Na skin Kayn Anônimos, o mestre das sombras assume uma nova persona, mergulhando nas profundezas do anonimato e da clandestinidade. Vestido em um manto escuro e adornado com símbolos enigmáticos, Kayn se camufla nas sombras, tornando-se praticamente indistinguível da escuridão que o cerca. Seus olhos brilham com uma luz sinistra por trás da máscara que oculta sua identidade, adicionando um ar de mistério e perigo à sua presença. Empunhando sua foice sombria com destreza mortal, ele se move silenciosamente pelo campo de batalha, deixando apenas o rastro de almas colhidas em seu rastro. Kayn Anônimos personifica a ideia de um espectro sombrio que vagueia pelas sombras, sempre à espreita, sempre pronto para emergir e reivindicar suas vítimas.\",\n            \"type\": \"Kayn\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T17:30:16.173Z\",\n            \"updatedAt\": \"2024-06-09T17:30:16.173Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f115354e47464106ad84\",\n            \"name\": \"Lux - Feiticeira\",\n            \"description\": \"Na skin Lux Feiticeira, a maga da luz se transforma em uma poderosa feiticeira, dominando os elementos místicos e arcanos com sua habilidade excepcional. Vestida com um manto longo e adornada com ornamentos mágicos, Lux irradia uma aura de mistério e poder. Seus cabelos dourados brilham com uma luz mágica, refletindo sua conexão com os reinos além do comum. Em sua mão, ela empunha um cetro enfeitado com gemas brilhantes, canalizando a energia dos elementos para conjurar poderosos feitiços. Seus olhos brilham com um fogo místico, revelando a intensidade de seu foco e determinação enquanto lança seus encantamentos. Com sua magia envolta em mistério e fascínio, Lux Feiticeira personifica a beleza e o poder do oculto.\",\n            \"type\": \"Lux\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:14:45.756Z\",\n            \"updatedAt\": \"2024-06-09T18:14:45.756Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f307354e47464106ad88\",\n            \"name\": \"Lux - Ladra Arcana\",\n            \"description\": \"Na skin Lux Ladra Arcana, a maga da luz assume o papel de uma habilidosa ladra das sombras, usando sua destreza e astúcia para surpreender seus inimigos. Vestida com um traje negro elegante, adornado com detalhes em ouro e roxo, Lux se camufla na escuridão da noite, pronta para realizar seus golpes furtivos. Seus cabelos loiros são ocultos sob um capuz sombrio, enquanto seus olhos azuis brilham com uma inteligência maliciosa. Em suas mãos, ela empunha adagas brilhantes, prontas para desferir golpes rápidos e precisos contra seus alvos. Com passos leves e silenciosos, Lux Ladra Arcana se move pelas sombras, manipulando a magia para alcançar seus objetivos sem ser detectada.\",\n            \"type\": \"Lux\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:23:03.468Z\",\n            \"updatedAt\": \"2024-06-09T18:23:03.468Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f371354e47464106ad8a\",\n            \"name\": \"Lux - Patrulheira\",\n            \"description\": \"Na skin Lux Patrulheira, a maga da luz assume o papel de uma agente da lei determinada a manter a paz e a justiça na cidade. Vestida com um uniforme policial moderno, Lux exibe autoridade e confiança enquanto patrulha as ruas, pronta para enfrentar qualquer ameaça que surja. Seu cabelo loiro é amarrado em um coque prático, enquanto seu olhar determinado revela sua dedicação ao cumprimento do dever. Armada com uma pistola brilhante e escudos de energia mágica, Lux está preparada para enfrentar o crime e proteger os cidadãos da cidade. Com sua habilidade de manipular a luz, ela ilumina as trevas da noite, garantindo que nenhum criminoso escape de sua vigilância implacável.\",\n            \"type\": \"Lux\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:24:49.875Z\",\n            \"updatedAt\": \"2024-06-09T18:24:49.875Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f3e3354e47464106ad8d\",\n            \"name\": \"Senna - Velho Oeste\",\n            \"description\": \"Na skin Senna Velho Oeste, a atiradora sombria assume uma aparência inspirada nos tempos do Velho Oeste, mergulhando em uma atmosfera de duelos e aventuras na fronteira. Vestida com um longo casaco de couro marrom adornado com franjas e detalhes em metal, Senna exibe um visual robusto e desafiador. Seu chapéu de cowboy inclina-se sobre seus cabelos escuros, enquanto sua expressão determinada revela sua coragem e determinação em enfrentar os perigos do oeste selvagem. Armada com uma espingarda de cano longo e uma aura sombria de poder, Senna está pronta para proteger os inocentes e enfrentar os foras da lei que ousam desafiar sua autoridade. Sob o sol escaldante do deserto, ela é uma lenda viva, pronta para fazer justiça em uma terra sem lei.\",\n            \"type\": \"Senna\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:26:43.507Z\",\n            \"updatedAt\": \"2024-06-09T18:26:43.507Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f42b354e47464106ad8f\",\n            \"name\": \"Senna - True Damage\",\n            \"description\": \"Na skin Senna True Damage, a atiradora sombria se une ao renomado grupo musical True Damage, exibindo um estilo arrojado e urbano. Vestida com roupas modernas e vibrantes, Senna incorpora o espírito e a energia do hip-hop, com um toque futurista. Seu visual é composto por uma jaqueta de couro preta decorada com detalhes dourados e azuis, combinada com calças e botas robustas. Um óculos de sol elegante e uma máscara facial destacam sua personalidade única e seu estilo de vida influente. Com seu rifle transformado em um microfone estilizado, Senna comanda o palco com sua presença magnética e sua voz poderosa. Acompanhada pelos outros membros do True Damage, ela se destaca como uma estrela em ascensão na cena musical, pronta para inspirar e encantar seus fãs com suas performances inesquecíveis.\",\n            \"type\": \"Senna\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:27:55.932Z\",\n            \"updatedAt\": \"2024-06-09T18:27:55.932Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f45e354e47464106ad91\",\n            \"name\": \"Senna - Projeto Senna\",\n            \"description\": \"Na skin Projeto Senna, a atiradora se transforma em uma guerreira cibernética futurista, pronta para combater em um mundo distópico dominado pela tecnologia. Vestida com um traje de alta tecnologia, Senna exibe uma estética cyberpunk com elementos metálicos e neon. Seu visual é aprimorado por uma armadura elegante e aerodinâmica, equipada com dispositivos de última geração para aumentar suas habilidades de combate. Seu rifle foi transformado em uma arma avançada, com linhas futuristas e efeitos visuais impressionantes. Com sua determinação e destreza aprimoradas pela tecnologia, Senna lidera o charge contra as forças do mal, lutando pela liberdade e pela justiça em um mundo dominado pelo caos.\",\n            \"type\": \"Senna\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:28:46.271Z\",\n            \"updatedAt\": \"2024-06-09T18:28:46.271Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f4b1354e47464106ad94\",\n            \"name\": \"Seraphine - Out Indie\",\n            \"description\": \"Na skin Projeto Senna, a atiradora se transforma em uma guerreira cibernética futurista, pronta para combater em um mundo distópico dominado pela tecnologia. Vestida com um traje de alta tecnologia, Senna exibe uma estética cyberpunk com elementos metálicos e neon. Seu visual é aprimorado por uma armadura elegante e aerodinâmica, equipada com dispositivos de última geração para aumentar suas habilidades de combate. Seu rifle foi transformado em uma arma avançada, com linhas futuristas e efeitos visuais impressionantes. Com sua determinação e destreza aprimoradas pela tecnologia, Senna lidera o charge contra as forças do mal, lutando pela liberdade e pela justiça em um mundo dominado pelo caos.\",\n            \"type\": \"Seraphine\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:30:09.376Z\",\n            \"updatedAt\": \"2024-06-09T18:30:09.376Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f4e3354e47464106ad96\",\n            \"name\": \"Seraphine - Rumo Ao Estrelato\",\n            \"description\": \"Na skin Seraphine Rumo Ao Estrelato, Seraphine assume o papel de uma superstar pop em ascensão, pronta para conquistar os palcos e os corações de seus fãs. Com um visual deslumbrante e glamouroso, ela brilha com roupas extravagantes, repletas de brilhos, lantejoulas e cores vibrantes. Seus cabelos longos e sedosos caem em ondas perfeitas, enquanto seu sorriso radiante ilumina o palco. Equipada com um microfone de alta tecnologia e cercada por luzes cintilantes, Seraphine comanda o palco com confiança e carisma, cativando a audiência com sua voz poderosa e performances envolventes. Seu estilo glam pop é complementado por acessórios luxuosos e maquiagem deslumbrante, fazendo dela uma verdadeira estrela em ascensão.\",\n            \"type\": \"Seraphine\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1500,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:30:59.187Z\",\n            \"updatedAt\": \"2024-06-09T18:30:59.187Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f551354e47464106ad98\",\n            \"name\": \"Seraphine - All Out Superstar\",\n            \"description\": \"Na skin Seraphine All Out Superstar, Seraphine se transforma em uma diva pop absoluta, pronta para dominar o palco com seu talento musical e estilo deslumbrante. Vestida com um traje deslumbrante e cheio de brilhos, ela exala glamour e confiança enquanto se prepara para uma apresentação emocionante. Seus cabelos longos e sedosos são adornados com acessórios reluzentes, complementando sua aura de estrela. Com um microfone de última geração em mãos e um sorriso radiante, Seraphine está pronta para encantar a plateia com suas músicas cativantes e coreografias envolventes. Seu visual é uma celebração do sucesso e da determinação, destacando sua jornada para se tornar uma verdadeira superstar.\",\n            \"type\": \"Seraphine\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1400,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:32:49.925Z\",\n            \"updatedAt\": \"2024-06-09T18:32:49.925Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f5d3354e47464106ad9b\",\n            \"name\": \"Xayah - SSG\",\n            \"description\": \"Na skin Xayah SSG, a guerreira rebelde Xayah se une à equipe SSG (Samsung Galaxy) para competir nos campos de batalha de Summoner's Rift. Vestida com um traje tecnológico e futurista, Xayah exibe o emblema da equipe SSG em seu peito, mostrando sua lealdade à organização. Seus movimentos ágeis e graciosos são aprimorados por efeitos visuais deslumbrantes que refletem a energia e a intensidade da competição. Com suas penas afiadas prontas para serem lançadas e seu olhar determinado, Xayah está pronta para lutar pela vitória ao lado de sua equipe. A skin SSG adiciona uma nova dimensão à personalidade única de Xayah, combinando sua ferocidade característica com o espírito competitivo do cenário profissional de eSports.\",\n            \"type\": \"Xayah\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1000,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:34:59.354Z\",\n            \"updatedAt\": \"2024-06-09T18:34:59.354Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f612354e47464106ad9d\",\n            \"name\": \"Xayah - Crepúsculo Cósmico\",\n            \"description\": \"Na skin Xayah Crepúsculo Cósmico, a habilidosa rebelde Xayah transcende as fronteiras da realidade para adentrar um reino cósmico de beleza e mistério. Vestida em um traje deslumbrante adornado com estrelas cintilantes e padrões celestiais, Xayah irradia uma aura de poder celestial enquanto dança pelos campos de batalha de Summoner's Rift. Suas penas brilham com uma luz etérea, enquanto ela desfere golpes rápidos e precisos contra seus inimigos. Com um olhar determinado e uma postura confiante, Xayah personifica a graça e a força das constelações, dominando o espaço-tempo com sua destreza incomparável. A skin Crepúsculo Cósmico eleva Xayah a novas alturas, transformando-a em uma verdadeira deusa estelar no universo de League of Legends.\",\n            \"type\": \"Xayah\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:36:02.507Z\",\n            \"updatedAt\": \"2024-06-09T18:36:02.507Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f6e3354e47464106ad9f\",\n            \"name\": \"Xayah - Crepúsculo Cósmico\",\n            \"description\": \"A Xayah Queridinha é uma skin que transforma a feroz guerreira em uma adorável companheira de batalha. Nesta versão encantadora, Xayah exibe uma aparência mais amigável e carismática, contrastando com sua natureza ágil e determinada nos campos de batalha de Summoner's Rift.Seus cabelos esvoaçantes são adornados com delicadas fitas coloridas, conferindo-lhe um visual ainda mais cativante. Seus trajes foram cuidadosamente estilizados com detalhes alegres e vibrantes, evocando uma sensação de leveza e descontração.\",\n            \"type\": \"Xayah\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 975,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:39:31.871Z\",\n            \"updatedAt\": \"2024-06-09T18:39:31.871Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f776354e47464106ada2\",\n            \"name\": \"Zed - Lamina do Trovão\",\n            \"description\": \"A Zed Lamina do Trovão é uma obra-prima de engenhosidade e poder. Nesta interpretação eletrizante, Zed, o Mestre das Sombras, emerge como uma tempestade imparável, com sua laminação energizada pronta para desencadear trovões e relâmpagos sobre seus inimigos. Vestido em trajes escuros e elegantes, Zed irradia uma aura de mistério e perigo iminente. Seus olhos brilham com energia elétrica, refletindo sua conexão íntima com as forças da tempestade. Cada movimento é carregado de poder, enquanto ele desliza pelo campo de batalha com uma graça mortal, pronto para desferir golpes rápidos e precisos em seus oponentes. A laminação de Zed, crackling with lightning, é uma arma formidável, capaz de cortar através das defesas mais sólidas e infligir danos devastadores. Com cada golpe, ele canaliza a energia da tempestade, tornando-se uma força da natureza que não pode ser contida. A Zed Lamina do Trovão não é apenas uma skin, é uma afirmação de poder e domínio sobre seus adversários. Para aqueles que ousam enfrentá-lo, preparem-se para serem envoltos pela fúria dos céus.\",\n            \"type\": \"Zed\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1350,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:41:58.692Z\",\n            \"updatedAt\": \"2024-06-09T18:41:58.692Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f792354e47464106ada4\",\n            \"name\": \"Zed - Projeto Zed\",\n            \"description\": \"Em um mundo futurista, onde a tecnologia avançada reina suprema, surge Zed Projeto Zed, uma encarnação cibernética do Mestre das Sombras. Com linhas afiadas e um visual futurista, esta skin apresenta Zed equipado com implantes cibernéticos e uma armadura biomecânica que o torna ainda mais letal. Seus movimentos são precisos e rápidos, refletindo a perfeição da engenharia robótica. A laminação de Zed, agora imbuida com energia pulsante, corta o ar com uma determinação mecânica, enquanto ele avança implacavelmente em direção aos seus alvos. Cada habilidade é executada com uma eficiência fria e calculada, mostrando o domínio absoluto de Zed sobre suas habilidades. Com uma estética única que combina elementos tradicionais com tecnologia avançada, Zed Projeto Zed é uma visão do futuro sombrio e fascinante do universo de League of Legends.\",\n            \"type\": \"Zed\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1200,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:42:26.378Z\",\n            \"updatedAt\": \"2024-06-09T18:42:26.378Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6665f7e6354e47464106ada6\",\n            \"name\": \"Zed - SKT\",\n            \"description\": \"Em honra à sua excepcional habilidade e ao seu legado no campo de batalha, Zed SKT apresenta o Mestre das Sombras com um visual digno de um campeão mundial. Vestindo uma armadura elegante e imponente, Zed exala confiança e determinação enquanto se prepara para a batalha. Sua lamina brilha com um resplendor dourado, refletindo sua maestria e a glória de suas muitas vitórias. Cada movimento é executado com graça e precisão, demonstrando o domínio absoluto que Zed possui sobre as sombras. Com sua presença imponente e seu estilo impecável, Zed SKT é uma verdadeira representação da excelência e da supremacia no campo de batalha.\",\n            \"type\": \"Zed\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 1200,\n            \"rarity\": \"Normal\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb1423b835e3f8cdddd35\",\n                \"name\": \"League of Legends\",\n                \"type\": \"MOBA\",\n                \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n                \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-09T18:43:50.200Z\",\n            \"updatedAt\": \"2024-06-09T18:43:50.200Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6668ebdc3a0592d8fd362963\",\n            \"name\": \"Nome da Skin\",\n            \"description\": \"Descrição da Skin\",\n            \"type\": \"Tipo da Skin\",\n            \"image\": \"URL da Imagem\",\n            \"price\": 100,\n            \"rarity\": \"Raridade da Skin\",\n            \"note\": 0,\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"game\": {\n                \"_id\": \"665cb13d3b835e3f8cdddd33\",\n                \"name\": \"Counter-Strike: Global Offensive\",\n                \"type\": \"FPS\",\n                \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n                \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2024-06-12T00:29:16.799Z\",\n            \"updatedAt\": \"2024-06-12T00:29:16.799Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "📥 - GET para skin_colection de um usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}/skins",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"skins"
+					]
+				},
+				"description": "Obtém a coleção de skins de um usuário específico."
+			},
+			"response": [
+				{
+					"name": "GET para skin_colection de um usuário",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/665cae71116006c0c743894c/skins",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"665cae71116006c0c743894c",
+								"skins"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:03:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "939"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925ec7bcbfb0801-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6c0-OnPUBsl5DHmytNR1+AWO9oFwz3g\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "96d92b92-9673-4072"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"skins\": [\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cc32942641de299157430\",\n            \"name\": \"MP7 - Bloodsport\",\n            \"description\": \"A MP7 | Bloodsport é uma skin que exala energia e vigor, apresentando um design vibrante em vermelho, preto e branco com diversos logotipos e símbolos futuristas espalhados por sua superfície. Inspirada no visual dos carros de corrida esportivos, a Bloodsport transforma a MP7 em uma peça de arte moderna e agressiva, ideal para jogadores que desejam adicionar um toque de velocidade e intensidade ao seu arsenal.\",\n            \"type\": \"MP7\",\n            \"image\": \"https://drive.google.com/uc?id=1QYxk8VMafRklfgS0q0y3kiDs4AZz6DBP\",\n            \"price\": 150,\n            \"rarity\": \"Muito Comum\",\n            \"note\": 0,\n            \"game\": \"665cb13d3b835e3f8cdddd33\",\n            \"createdAt\": \"2024-06-02T19:08:25.881Z\",\n            \"updatedAt\": \"2024-06-09T16:54:47.170Z\",\n            \"__v\": 0\n        },\n        {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cb71f42641de29915741e\",\n            \"name\": \"M4A1-S - Hyper Beast\",\n            \"description\": \"A M4A1-S Hyper Beast é uma das skins mais vibrantes e detalhadas disponíveis para esta arma. Com um design psicodélico e monstruoso, ela apresenta uma fera colorida e feroz estampada ao longo do corpo da arma. As cores vivas, como azul, verde, vermelho e amarelo, se misturam de forma a criar um visual impactante e quase surreal. A Hyper Beast transforma a M4A1-S em uma verdadeira obra de arte, ideal para jogadores que querem um estilo único e intimidante. Esta skin é perfeita para quem deseja chamar a atenção e se destacar no campo de batalha.\",\n            \"type\": \"M4A1-S\",\n            \"image\": \"https://drive.google.com/uc?id=153jaWuX721swmryBcefBIx9JMPFRDrRi\",\n            \"price\": 400,\n            \"rarity\": \"Lendária\",\n            \"note\": 0,\n            \"game\": \"665cb13d3b835e3f8cdddd33\",\n            \"createdAt\": \"2024-06-02T18:17:03.090Z\",\n            \"updatedAt\": \"2024-06-08T19:42:43.883Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "📥 - Obter uma Skin por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins/{id_skin}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				},
+				"description": "Recupera os detalhes de uma skin específica pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Obter uma Skin por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins/665cb5853b835e3f8cdddd39",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins",
+								"665cb5853b835e3f8cdddd39"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:04:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "777"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925ed8cfb9a39b8-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f3-rFpSs4THiNE94OeRpLpCG9AnJG4\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "0e942e38-86a0-4f83"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Skin encontrada com sucesso\",\n    \"skin\": {\n        \"_id\": \"665cb5853b835e3f8cdddd39\",\n        \"name\": \"AK-47 Asiimov\",\n        \"description\": \"A AK-47 Asiimov é uma skin icônica e futurista que captura a essência da ficção científica. Com um design elegante e moderno, esta skin apresenta um esquema de cores vibrante em branco, preto e laranja, inspirado na estética sci-fi. As linhas geométricas e os detalhes precisos lembram tecnologias avançadas e conceitos de engenharia de ponta. A Asiimov transforma a AK-47 em uma peça de arte contemporânea, ideal para jogadores que desejam se destacar no campo de batalha com estilo e inovação. Seja no calor da ação ou em momentos de estratégia, a Asiimov é a escolha perfeita para aqueles que buscam combinar desempenho e design de ponta.\",\n        \"type\": \"AK-47\",\n        \"image\": \"https://drive.usercontent.google.com/download?id=1hd5UYsBTcAHWRlP7Yvfhd7YqukHlQjKz&export=view&authuser=0\",\n        \"price\": 3000,\n        \"rarity\": \"Raro\",\n        \"note\": 4,\n        \"game\": {\n            \"_id\": \"665cb13d3b835e3f8cdddd33\",\n            \"name\": \"Counter-Strike: Global Offensive\",\n            \"type\": \"FPS\",\n            \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n            \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n            \"__v\": 0\n        },\n        \"createdAt\": \"2024-06-02T18:10:13.974Z\",\n        \"updatedAt\": \"2024-06-08T19:36:43.318Z\",\n        \"__v\": 0,\n        \"ratingCount\": 4,\n        \"totalRating\": 16\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "🛠️ - Atualizar uma Skin por ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Zed - SKT\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins/{id_skin}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				},
+				"description": "Atualiza os detalhes de uma skin específica pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Atualizar uma Skin por ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Zed - SKT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins/6665f7e6354e47464106ada6",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins",
+								"6665f7e6354e47464106ada6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:06:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "653"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925efce2ce52d26-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f1-MJ3kl/2ZncsM2AdqkLEflFsCsvI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f148f47c-9c38-478b"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Skin atualizada com sucesso\",\n    \"skin\": {\n        \"_id\": \"6665f7e6354e47464106ada6\",\n        \"name\": \"Zed-SKT\",\n        \"description\": \"Em honra à sua excepcional habilidade e ao seu legado no campo de batalha, Zed SKT apresenta o Mestre das Sombras com um visual digno de um campeão mundial. Vestindo uma armadura elegante e imponente, Zed exala confiança e determinação enquanto se prepara para a batalha. Sua lamina brilha com um resplendor dourado, refletindo sua maestria e a glória de suas muitas vitórias. Cada movimento é executado com graça e precisão, demonstrando o domínio absoluto que Zed possui sobre as sombras. Com sua presença imponente e seu estilo impecável, Zed SKT é uma verdadeira representação da excelência e da supremacia no campo de batalha.\",\n        \"type\": \"Zed\",\n        \"image\": \"URL da Imagem\",\n        \"price\": 1200,\n        \"rarity\": \"Normal\",\n        \"note\": 0,\n        \"totalRating\": 0,\n        \"ratingCount\": 0,\n        \"game\": \"665cb1423b835e3f8cdddd35\",\n        \"createdAt\": \"2024-06-09T18:43:50.200Z\",\n        \"updatedAt\": \"2024-06-12T01:06:10.531Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "❌ - Deletar uma Skin por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/skins/{id_skin}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"skins",
+						"{id_skin}"
+					]
+				},
+				"description": "Remove uma skin específica pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Deletar uma Skin por ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/skins/6668ebdc3a0592d8fd362963",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"skins",
+								"6668ebdc3a0592d8fd362963"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:05:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "284"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925ee4edade6fe6-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"191-SbqPHPGNRSoyYRW+vcmzg1BWJUo\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f5629b35-aeaa-40cf"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Skin deletada com sucesso\",\n    \"skin\": {\n        \"_id\": \"6668ebdc3a0592d8fd362963\",\n        \"name\": \"Nome da Skin\",\n        \"description\": \"Descrição da Skin\",\n        \"type\": \"Tipo da Skin\",\n        \"image\": \"URL da Imagem\",\n        \"price\": 100,\n        \"rarity\": \"Raridade da Skin\",\n        \"note\": 0,\n        \"totalRating\": 0,\n        \"ratingCount\": 0,\n        \"game\": \"665cb13d3b835e3f8cdddd33\",\n        \"createdAt\": \"2024-06-12T00:29:16.799Z\",\n        \"updatedAt\": \"2024-06-12T00:29:16.799Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "❌ - Remover uma skin do usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/usuarios/{id_usuario}/remove-skin/{id_skin}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"usuarios",
+						"{id_usuario}",
+						"remove-skin",
+						"{id_skin}"
+					]
+				},
+				"description": "Remove uma skin da coleção de um usuário específico."
+			},
+			"response": [
+				{
+					"name": "Remover uma skin do usuário",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/usuarios/665cada2116006c0c7438949/remove-skin/665cb5853b835e3f8cdddd39",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"usuarios",
+								"665cada2116006c0c7438949",
+								"remove-skin",
+								"665cb5853b835e3f8cdddd39"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:02:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "353"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925e9e42b3682da-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1fa-CWDZAjRETMCKarw4UTI0/iLlLEs\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ba528962-1e48-4318"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Skin removida do skin_collection do usuário com sucesso\",\n    \"usuario\": {\n        \"_id\": \"665cada2116006c0c7438949\",\n        \"username\": \"Fallen\",\n        \"email\": \"Fallen@MBR.com\",\n        \"password\": \"Fatec123\",\n        \"profile_picture\": \"https://drive.google.com/uc?export=view&id=1LDoNU9zhcvz5tnkpd4IrAfjfgj4djFfD\",\n        \"skin_collection\": [\n            \"665cd58aa13b26664fb7f2b4\",\n            \"665cd5a7a13b26664fb7f2be\",\n            \"665cd599a13b26664fb7f2b8\"\n        ],\n        \"created_at\": \"2024-06-02T17:36:34.817Z\",\n        \"createdAt\": \"2024-06-02T17:36:34.820Z\",\n        \"updatedAt\": \"2024-06-12T01:02:08.439Z\",\n        \"__v\": 6\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "📤 - Criar um jogo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"teste do Jogo\",\r\n  \"type\": \"teste do Jogo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/games",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"games"
+					]
+				},
+				"description": "Cria um novo jogo no banco de dados."
+			},
+			"response": [
+				{
+					"name": "Criar um jogo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"teste do Jogo\",\r\n  \"type\": \"teste do Jogo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/games",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"games"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:07:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f23bad020774-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a6-VEfqLwiH0ZtKp4lzAl91zBLzzRY\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "6a14ec16-dc0c-4e52"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"teste do Jogo\",\n    \"type\": \"teste do Jogo\",\n    \"_id\": \"6668f4e5c69eaef16326dcc3\",\n    \"createdAt\": \"2024-06-12T01:07:49.928Z\",\n    \"updatedAt\": \"2024-06-12T01:07:49.928Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "📥 - Obter todos os jogos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/games",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"games"
+					]
+				},
+				"description": "Lista todos os jogos disponíveis no banco de dados."
+			},
+			"response": [
+				{
+					"name": "Obter todos os jogos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/games",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"games"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:08:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "288"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f2c388ef6fb0-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a1-ytqSZGD5v8grBkqYkK55qKPv/LU\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e752d3bc-86b1-4958"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"665cb13d3b835e3f8cdddd33\",\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"type\": \"FPS\",\n        \"createdAt\": \"2024-06-02T17:51:57.155Z\",\n        \"updatedAt\": \"2024-06-02T17:51:57.155Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"665cb1423b835e3f8cdddd35\",\n        \"name\": \"League of Legends\",\n        \"type\": \"MOBA\",\n        \"createdAt\": \"2024-06-02T17:52:02.777Z\",\n        \"updatedAt\": \"2024-06-02T17:52:02.777Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"665fb6ea385219d5c8a2c281\",\n        \"name\": \"teste do Jogo\",\n        \"type\": \"teste do Jogo\",\n        \"createdAt\": \"2024-06-05T00:52:58.945Z\",\n        \"updatedAt\": \"2024-06-05T00:52:58.945Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6668f4e5c69eaef16326dcc3\",\n        \"name\": \"teste do Jogo\",\n        \"type\": \"teste do Jogo\",\n        \"createdAt\": \"2024-06-12T01:07:49.928Z\",\n        \"updatedAt\": \"2024-06-12T01:07:49.928Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "🛠️ - Atualizar um Jogo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Novo Nome\",\r\n    \"type\": \"Novo Tipo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/games/{id_jogo}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"games",
+						"{id_jogo}"
+					]
+				},
+				"description": "Atualiza os detalhes de um jogo específico pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Atualizar um Jogo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Novo Nome\",\r\n    \"type\": \"Novo Tipo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/games/6668f4e5c69eaef16326dcc3",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"games",
+								"6668f4e5c69eaef16326dcc3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:08:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "177"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f36d1fac6fb0-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cf-aTSbSAMadW5k+Jof8NaFK23LtiM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "24d51856-b0bf-4a0b"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jogo atualizado com sucesso\",\n    \"game\": {\n        \"_id\": \"6668f4e5c69eaef16326dcc3\",\n        \"name\": \"Novo Nome\",\n        \"type\": \"Novo Tipo\",\n        \"createdAt\": \"2024-06-12T01:07:49.928Z\",\n        \"updatedAt\": \"2024-06-12T01:08:38.828Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "❌ - Deletar um jogo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/games/{id_jogo}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"games",
+						"{id_jogo}"
+					]
+				},
+				"description": "Remove um jogo específico pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Deletar um jogo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/games/665fb6ea385219d5c8a2c281",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"games",
+								"665fb6ea385219d5c8a2c281"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:09:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f44198bb3b62-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d5-svnTCkyiK4ihdc2OcrbAqqVeHaY\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e7b2aaa8-2a5e-492c"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jogo deletado com sucesso\",\n    \"game\": {\n        \"_id\": \"665fb6ea385219d5c8a2c281\",\n        \"name\": \"teste do Jogo\",\n        \"type\": \"teste do Jogo\",\n        \"createdAt\": \"2024-06-05T00:52:58.945Z\",\n        \"updatedAt\": \"2024-06-05T00:52:58.945Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "📤 - Adicionar  um comentário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"665f97645e324beb4b504457\",\r\n    \"skin\": \"665cb71f42641de29915741e\",\r\n    \"comment\": \"Ótima skin, estou adorando!\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/comentarios",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"comentarios"
+					]
+				},
+				"description": "Adiciona um novo comentário a uma skin."
+			},
+			"response": [
+				{
+					"name": "Adicionar  um comentário",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"665f97645e324beb4b504457\",\r\n    \"skin\": \"665cb71f42641de29915741e\",\r\n    \"comment\": \"Ótima skin, estou adorando!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/comentarios",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"comentarios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:09:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "194"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f4b33d5d3b62-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"107-8fwl0SPkyAWTOoN+L+ftSQo8rio\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "903f1032-5ca8-4094"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": \"665f97645e324beb4b504457\",\n    \"skin\": \"665cb71f42641de29915741e\",\n    \"comment\": \"Ótima skin, estou adorando!\",\n    \"_id\": \"6668f54bc69eaef16326dcca\",\n    \"date\": \"2024-06-12T01:09:31.187Z\",\n    \"createdAt\": \"2024-06-12T01:09:31.188Z\",\n    \"updatedAt\": \"2024-06-12T01:09:31.188Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "📥 - Obter todos os comentários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/comentarios",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"comentarios"
+					]
+				},
+				"description": "Lista todos os comentários disponíveis no banco de dados."
+			},
+			"response": [
+				{
+					"name": "Obter todos os comentários",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/comentarios",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"comentarios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:10:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1536"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f5c79c542d07-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11c4-UJpcuEI+jgd8a7IlONXXRlzYnik\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3e15a6b3-278d-4c3e"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"665cca930dcf99ce8f7beb84\",\n        \"user\": {\n            \"_id\": \"665cada2116006c0c7438949\",\n            \"username\": \"Fallen\",\n            \"email\": \"Fallen@MBR.com\",\n            \"password\": \"Fatec123\",\n            \"profile_picture\": \"https://drive.google.com/uc?export=view&id=1LDoNU9zhcvz5tnkpd4IrAfjfgj4djFfD\",\n            \"skin_collection\": [\n                \"665cd58aa13b26664fb7f2b4\",\n                \"665cd5a7a13b26664fb7f2be\",\n                \"665cd599a13b26664fb7f2b8\"\n            ],\n            \"created_at\": \"2024-06-02T17:36:34.817Z\",\n            \"createdAt\": \"2024-06-02T17:36:34.820Z\",\n            \"updatedAt\": \"2024-06-12T01:02:08.439Z\",\n            \"__v\": 6\n        },\n        \"skin\": {\n            \"_id\": \"665cb5853b835e3f8cdddd39\",\n            \"name\": \"AK-47 Asiimov\",\n            \"description\": \"A AK-47 Asiimov é uma skin icônica e futurista que captura a essência da ficção científica. Com um design elegante e moderno, esta skin apresenta um esquema de cores vibrante em branco, preto e laranja, inspirado na estética sci-fi. As linhas geométricas e os detalhes precisos lembram tecnologias avançadas e conceitos de engenharia de ponta. A Asiimov transforma a AK-47 em uma peça de arte contemporânea, ideal para jogadores que desejam se destacar no campo de batalha com estilo e inovação. Seja no calor da ação ou em momentos de estratégia, a Asiimov é a escolha perfeita para aqueles que buscam combinar desempenho e design de ponta.\",\n            \"type\": \"AK-47\",\n            \"image\": \"https://drive.usercontent.google.com/download?id=1hd5UYsBTcAHWRlP7Yvfhd7YqukHlQjKz&export=view&authuser=0\",\n            \"price\": 3000,\n            \"rarity\": \"Raro\",\n            \"note\": 3.8,\n            \"game\": \"665cb13d3b835e3f8cdddd33\",\n            \"createdAt\": \"2024-06-02T18:10:13.974Z\",\n            \"updatedAt\": \"2024-06-12T01:07:05.788Z\",\n            \"__v\": 0,\n            \"ratingCount\": 5,\n            \"totalRating\": 19\n        },\n        \"comment\": \"Este é um comentário de exemplo.\",\n        \"date\": \"2024-06-02T19:40:03.680Z\",\n        \"createdAt\": \"2024-06-02T19:40:03.682Z\",\n        \"updatedAt\": \"2024-06-02T19:40:03.682Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"665fbdb431ffc7e972f9d2d9\",\n        \"user\": {\n            \"_id\": \"665f97645e324beb4b504457\",\n            \"username\": \"Guilherme Luis\",\n            \"email\": \"guilherme.luis@hotmail.com\",\n            \"password\": \"Lol123\",\n            \"profile_picture\": \"url\",\n            \"skin_collection\": [],\n            \"created_at\": \"2024-06-04T22:38:28.670Z\",\n            \"createdAt\": \"2024-06-04T22:38:28.674Z\",\n            \"updatedAt\": \"2024-06-04T23:03:48.659Z\",\n            \"__v\": 0\n        },\n        \"skin\": {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cb71f42641de29915741e\",\n            \"name\": \"M4A1-S - Hyper Beast\",\n            \"description\": \"A M4A1-S Hyper Beast é uma das skins mais vibrantes e detalhadas disponíveis para esta arma. Com um design psicodélico e monstruoso, ela apresenta uma fera colorida e feroz estampada ao longo do corpo da arma. As cores vivas, como azul, verde, vermelho e amarelo, se misturam de forma a criar um visual impactante e quase surreal. A Hyper Beast transforma a M4A1-S em uma verdadeira obra de arte, ideal para jogadores que querem um estilo único e intimidante. Esta skin é perfeita para quem deseja chamar a atenção e se destacar no campo de batalha.\",\n            \"type\": \"M4A1-S\",\n            \"image\": \"https://drive.google.com/uc?id=153jaWuX721swmryBcefBIx9JMPFRDrRi\",\n            \"price\": 400,\n            \"rarity\": \"Lendária\",\n            \"note\": 0,\n            \"game\": \"665cb13d3b835e3f8cdddd33\",\n            \"createdAt\": \"2024-06-02T18:17:03.090Z\",\n            \"updatedAt\": \"2024-06-08T19:42:43.883Z\",\n            \"__v\": 0\n        },\n        \"comment\": \"Ótima skin, estou adorando!\",\n        \"date\": \"2024-06-05T01:21:56.444Z\",\n        \"createdAt\": \"2024-06-05T01:21:56.446Z\",\n        \"updatedAt\": \"2024-06-05T01:21:56.446Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6668f54bc69eaef16326dcca\",\n        \"user\": {\n            \"_id\": \"665f97645e324beb4b504457\",\n            \"username\": \"Guilherme Luis\",\n            \"email\": \"guilherme.luis@hotmail.com\",\n            \"password\": \"Lol123\",\n            \"profile_picture\": \"url\",\n            \"skin_collection\": [],\n            \"created_at\": \"2024-06-04T22:38:28.670Z\",\n            \"createdAt\": \"2024-06-04T22:38:28.674Z\",\n            \"updatedAt\": \"2024-06-04T23:03:48.659Z\",\n            \"__v\": 0\n        },\n        \"skin\": {\n            \"totalRating\": 0,\n            \"ratingCount\": 0,\n            \"_id\": \"665cb71f42641de29915741e\",\n            \"name\": \"M4A1-S - Hyper Beast\",\n            \"description\": \"A M4A1-S Hyper Beast é uma das skins mais vibrantes e detalhadas disponíveis para esta arma. Com um design psicodélico e monstruoso, ela apresenta uma fera colorida e feroz estampada ao longo do corpo da arma. As cores vivas, como azul, verde, vermelho e amarelo, se misturam de forma a criar um visual impactante e quase surreal. A Hyper Beast transforma a M4A1-S em uma verdadeira obra de arte, ideal para jogadores que querem um estilo único e intimidante. Esta skin é perfeita para quem deseja chamar a atenção e se destacar no campo de batalha.\",\n            \"type\": \"M4A1-S\",\n            \"image\": \"https://drive.google.com/uc?id=153jaWuX721swmryBcefBIx9JMPFRDrRi\",\n            \"price\": 400,\n            \"rarity\": \"Lendária\",\n            \"note\": 0,\n            \"game\": \"665cb13d3b835e3f8cdddd33\",\n            \"createdAt\": \"2024-06-02T18:17:03.090Z\",\n            \"updatedAt\": \"2024-06-08T19:42:43.883Z\",\n            \"__v\": 0\n        },\n        \"comment\": \"Ótima skin, estou adorando!\",\n        \"date\": \"2024-06-12T01:09:31.187Z\",\n        \"createdAt\": \"2024-06-12T01:09:31.188Z\",\n        \"updatedAt\": \"2024-06-12T01:09:31.188Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "📥 - Buscar comentário por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/comentarios/{id_comentário}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				},
+				"description": "Recupera os detalhes de um comentário específico pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Buscar comentário por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/comentarios/665fbdb431ffc7e972f9d2d9",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"comentarios",
+								"665fbdb431ffc7e972f9d2d9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:12:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f8d97d8f07fa-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"125-NUNqLxO/m9hzCPth+/EDUjX9YeI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "5e94bb65-36e5-489c"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"comentario\": {\n        \"_id\": \"665fbdb431ffc7e972f9d2d9\",\n        \"user\": \"665f97645e324beb4b504457\",\n        \"skin\": \"665cb71f42641de29915741e\",\n        \"comment\": \"Ótima skin, estou adorando!\",\n        \"date\": \"2024-06-05T01:21:56.444Z\",\n        \"createdAt\": \"2024-06-05T01:21:56.446Z\",\n        \"updatedAt\": \"2024-06-05T01:21:56.446Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "🛠️ - Atualizar Comentário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Novo conteúdo do comentário\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/comentarios/{id_comentário}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				},
+				"description": "Atualiza os detalhes de um comentário específico pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Atualizar Comentário",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Novo conteúdo do comentário\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/comentarios/6668f54bc69eaef16326dcca",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"comentarios",
+								"6668f54bc69eaef16326dcca"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:10:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f6ae9db8822a-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"108-csh2MJBBV8qY7GDXMwriSQSQQJU\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f5751b0e-9a3b-44f5"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6668f54bc69eaef16326dcca\",\n    \"user\": \"665f97645e324beb4b504457\",\n    \"skin\": \"665cb71f42641de29915741e\",\n    \"comment\": \"Novo conteúdo do comentário\",\n    \"date\": \"2024-06-12T01:09:31.187Z\",\n    \"createdAt\": \"2024-06-12T01:09:31.188Z\",\n    \"updatedAt\": \"2024-06-12T01:10:52.187Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "❌ - Deletar um comentário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://skin-score-api.onrender.com/comentarios/{id_comentário}",
+					"protocol": "https",
+					"host": [
+						"skin-score-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"comentarios",
+						"{id_comentário}"
+					]
+				},
+				"description": "Remove um comentário específico pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Deletar um comentário",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://skin-score-api.onrender.com/comentarios/6668f54bc69eaef16326dcca",
+							"protocol": "https",
+							"host": [
+								"skin-score-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"comentarios",
+								"6668f54bc69eaef16326dcca"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 01:11:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8925f776fdc29c37-IAD"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-gAsJUCogZ7HtexiWW+X9KsuYKD8\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "1d1b0d97-101a-49c9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comentário deletado com sucesso\"\n}"
+				}
+			]
+		}
+	]
+}
