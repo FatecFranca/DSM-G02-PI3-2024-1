@@ -35,13 +35,22 @@ A documentação completa da API REST utilizada neste projeto, incluindo exemplo
 ## Tela Personagens
 ![Tela Personagens](https://raw.githubusercontent.com/FatecFranca/DSM-G02-PI3-2024-1/main/frontend/SkinScore/assets/img/portfolio/Print's/Personagens%20LOL.png)
 
-## Tela Skin´s
-![Tela Skin's](https://raw.githubusercontent.com/FatecFranca/DSM-G02-PI3-2024-1/main/frontend/SkinScore/assets/img/portfolio/Print's/Skin's.png)
+## Tela Skin´s Personagem
+![Tela Skin's Personagem](https://raw.githubusercontent.com/FatecFranca/DSM-G02-PI3-2024-1/main/frontend/SkinScore/assets/img/portfolio/Print's/Skin's.png)
 
 ## Tela Counter Strike
 ![Tela Counter Striker](https://raw.githubusercontent.com/FatecFranca/DSM-G02-PI3-2024-1/main/frontend/SkinScore/assets/img/portfolio/Print's/Tela%20CSGO.png)
 
+## Tela Armas
+![Tela Armas](https://github.com/FatecFranca/DSM-G02-PI3-2024-1/blob/main/frontend/SkinScore/assets/img/portfolio/Print's/tela%20armas.png?raw=true)
 
+## Tela Skin´s Armas
+![Telas Skin´s Armas](https://raw.githubusercontent.com/FatecFranca/DSM-G02-PI3-2024-1/main/frontend/SkinScore/assets/img/portfolio/Print's/Skin%C2%B4s%20armas.png)
 
+## Tela Avaliação e Comentário
+![Tela Avaliação e Comentário](https://github.com/FatecFranca/DSM-G02-PI3-2024-1/blob/main/frontend/SkinScore/assets/img/portfolio/Print's/Avalia%C3%A7%C3%A3o%20Skin%C2%B4s.png?raw=true)
+
+## Considerações Finais ##
+O projeto "Skin Score" representou uma grande oportunidade de aplicar nossos conhecimentos adquiridos ao longo do curso de Desenvolvimento de Software Multiplataforma. Através do trabalho colaborativo e da utilização de tecnologias modernas, conseguimos desenvolver uma aplicação completa e funcional que atende às necessidades de gerenciamento de skins de jogos. 
 
 
